@@ -1,7 +1,8 @@
 .neuralkart-logo-container {
+  --network-color: #2196f3;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -48,8 +49,13 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #14bef0;
+  background: var(--network-color);
   box-shadow: 0 0 10px rgba(20, 190, 240, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.node:hover {
+  transform: scale(1.2);
 }
 
 /* Input Layer Nodes */
@@ -80,8 +86,8 @@
 
 .connection {
   fill: none;
-  stroke: #14bef0;
-  stroke-width: 1;
+  stroke: var(--network-color);
+  stroke-width: 2;
   opacity: 0.3;
 }
 
@@ -149,4 +155,18 @@
   .neuralkart-logo-text {
     color: white;
   }
-} 
+}
+
+.neural-network.animated .connection {
+  stroke-dasharray: 15;
+  animation: flowAnimation 2s linear infinite;
+}
+
+@keyframes flowAnimation {
+  from {
+    stroke-dashoffset: 30;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

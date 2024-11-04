@@ -1,7 +1,6 @@
 {
   "name": "ngage",
   "version": "1.0.0",
-  "homepage": "https://shreyasrh9.github.io/ngage",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

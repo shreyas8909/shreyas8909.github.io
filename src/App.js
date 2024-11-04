@@ -9,8 +9,12 @@ import Contact from './components/Contact/Contact';
 import './styles/global.css';
 
 function App() {
+  const basename = process.env.NODE_ENV === 'production' 
+    ? process.env.PUBLIC_URL 
+    : '';
+
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename={basename}>
       <div className="App">
         <Navbar />
         <Hero />
