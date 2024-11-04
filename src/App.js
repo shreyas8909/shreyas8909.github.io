@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import Features from './components/Features/Features';
+import Solutions from './components/Solutions/Solutions';
 import './styles/global.css';
 
 function App() {
@@ -11,9 +12,8 @@ function App() {
       <div className="App">
         <Navbar />
         <Hero />
-        <div id="features">
-          <Features />
-        </div>
+        <Features />
+        <Solutions />
       </div>
     </Router>
   );
