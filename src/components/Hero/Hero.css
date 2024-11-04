@@ -6,6 +6,7 @@
   justify-content: center;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   overflow: hidden;
+  padding-top: 80px;
 }
 
 .hero-canvas {
@@ -187,6 +188,20 @@
   .hero-logo {
     transform: scale(1.2);
     margin-bottom: 1.5rem;
+  }
+
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero-content {
+    padding: 0 20px 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 120px;
   }
 }
 

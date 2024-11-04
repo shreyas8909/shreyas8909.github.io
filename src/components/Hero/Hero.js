@@ -117,6 +117,13 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          
+
+          <h1 className="hero-title">
+            Next-Generation
+            <span className="gradient-text"> Video Management</span>
+          </h1>
+
           <motion.div
             className="hero-logo"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -125,11 +132,6 @@ const Hero = () => {
           >
             <Logo size="large" />
           </motion.div>
-
-          <h1 className="hero-title">
-            Next-Generation
-            <span className="gradient-text"> Video Management</span>
-          </h1>
           <p className="hero-subtitle">
             Secure, Scalable, and Smart Video Surveillance Platform
           </p>
