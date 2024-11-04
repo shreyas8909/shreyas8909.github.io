@@ -6,6 +6,7 @@ import Features from './components/Features/Features';
 import Solutions from './components/Solutions/Solutions';
 import LiveDemo from './components/LiveDemo/LiveDemo';
 import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 import './styles/global.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Solutions />
         <LiveDemo />
         <Contact />
+        <Footer />
       </div>
     </Router>
   );
