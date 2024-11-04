@@ -5,7 +5,8 @@ import {
   FaSchool, 
   FaHospital, 
   FaShoppingCart, 
-  FaHome 
+  FaHome,
+  FaCheck 
 } from 'react-icons/fa';
 import './Solutions.css';
 
@@ -19,7 +20,8 @@ const solutionsList = [
       'Access control integration',
       'Visitor tracking',
       'Parking surveillance'
-    ]
+    ],
+    color: '#14bef0'
   },
   {
     icon: <FaIndustry />,
@@ -30,7 +32,8 @@ const solutionsList = [
       'Safety compliance',
       'Perimeter security',
       'Asset tracking'
-    ]
+    ],
+    color: '#00C49F'
   },
   {
     icon: <FaSchool />,
@@ -41,7 +44,8 @@ const solutionsList = [
       'Emergency alerts',
       'Attendance tracking',
       'Remote monitoring'
-    ]
+    ],
+    color: '#FFBB28'
   },
   {
     icon: <FaHospital />,
@@ -52,7 +56,8 @@ const solutionsList = [
       'Staff security',
       'Equipment tracking',
       'Restricted area control'
-    ]
+    ],
+    color: '#FF8042'
   },
   {
     icon: <FaShoppingCart />,
@@ -63,7 +68,8 @@ const solutionsList = [
       'Customer analytics',
       'Queue management',
       'Inventory monitoring'
-    ]
+    ],
+    color: '#8884d8'
   },
   {
     icon: <FaHome />,
@@ -74,34 +80,62 @@ const solutionsList = [
       'Mobile alerts',
       'Common area monitoring',
       'Visitor management'
-    ]
+    ],
+    color: '#82ca9d'
   }
 ];
 
 const Solutions = () => {
-  console.log("Solutions component rendering");
-
   return (
     <section className="solutions-section" id="solutions">
       <div className="solutions-container">
-        <h2 className="solutions-title">Industry Solutions</h2>
-        <p className="solutions-subtitle">
-          Tailored surveillance solutions for every industry
-        </p>
+        <div className="solutions-header">
+          <h2 className="solutions-title">
+            Industry Solutions
+            <span className="title-accent"></span>
+          </h2>
+          <p className="solutions-subtitle">
+            Tailored surveillance solutions for every industry
+          </p>
+        </div>
         
         <div className="solutions-grid">
           {solutionsList.map((solution, index) => (
-            <div key={index} className="solution-card">
-              <div className="solution-icon">
+            <div 
+              key={index} 
+              className="solution-card"
+              style={{ '--hover-color': solution.color }}
+            >
+              <div 
+                className="solution-icon-wrapper"
+                style={{ 
+                  backgroundColor: `${solution.color}15`,
+                  color: solution.color
+                }}
+              >
                 {solution.icon}
+                <div 
+                  className="icon-background"
+                  style={{ backgroundColor: solution.color }}
+                ></div>
               </div>
-              <h3 className="solution-title">{solution.title}</h3>
-              <p className="solution-description">{solution.description}</p>
-              <ul className="solution-features">
-                {solution.features.map((feature, featureIndex) => (
-                  <li key={featureIndex}>{feature}</li>
-                ))}
-              </ul>
+              <div className="solution-content">
+                <h3 className="solution-title">{solution.title}</h3>
+                <p className="solution-description">{solution.description}</p>
+                <ul className="solution-features">
+                  {solution.features.map((feature, featureIndex) => (
+                    <li key={featureIndex}>
+                      <span 
+                        className="feature-icon"
+                        style={{ color: solution.color }}
+                      >
+                        <FaCheck />
+                      </span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
