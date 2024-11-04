@@ -85,6 +85,26 @@ const Hero = () => {
     };
   }, []);
 
+  const handleGetStarted = () => {
+    const featuresSection = document.getElementById('features');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  const handleWatchDemo = () => {
+    const demoSection = document.getElementById('demo');
+    if (demoSection) {
+      demoSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section className="hero" id="home">
       <canvas ref={canvasRef} className="hero-canvas" />
@@ -108,6 +128,7 @@ const Hero = () => {
               className="primary-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={handleGetStarted}
             >
               <FaRocket className="btn-icon" />
               Get Started
@@ -116,6 +137,7 @@ const Hero = () => {
               className="secondary-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={handleWatchDemo}
             >
               <FaPlay className="btn-icon" />
               Watch Demo

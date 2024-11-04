@@ -15,6 +15,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (sectionId) => (e) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <motion.nav 
       className={`navbar ${isScrolled ? 'scrolled' : ''}`}
@@ -32,14 +44,14 @@ const Navbar = () => {
         </motion.div>
 
         <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-          <a href="#home" className="nav-link">Home</a>
-          <a href="#features" className="nav-link">Features</a>
-          <a href="#solutions" className="nav-link">Solutions</a>
-          <a href="#demo" className="nav-link">Live Demo</a>
-          <a href="#contact" className="nav-link">Contact</a>
-          <button className="login-btn">
+          <a href="#home" className="nav-link" onClick={handleNavClick('home')}>Home</a>
+          <a href="#features" className="nav-link" onClick={handleNavClick('features')}>Features</a>
+          <a href="#solutions" className="nav-link" onClick={handleNavClick('solutions')}>Solutions</a>
+          <a href="#demo" className="nav-link" onClick={handleNavClick('demo')}>Live Demo</a>
+          <a href="#contact" className="nav-link" onClick={handleNavClick('contact')}>Contact</a>
+          {/* <button className="login-btn">
             Get Started
-          </button>
+          </button> */}
         </div>
 
         <div 
