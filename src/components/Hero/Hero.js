@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaPlay, FaRocket } from 'react-icons/fa';
+import Logo from '../Logo/Logo';
 import './Hero.css';
 
 const Hero = () => {
@@ -116,6 +117,15 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <motion.div
+            className="hero-logo"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <Logo size="large" />
+          </motion.div>
+
           <h1 className="hero-title">
             Next-Generation
             <span className="gradient-text"> Video Management</span>
@@ -144,29 +154,6 @@ const Hero = () => {
             </motion.button>
           </div>
         </motion.div>
-
-        {/* <motion.div
-          className="hero-stats"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          {[
-            { number: '99.9%', label: 'Uptime' },
-            { number: '50K+', label: 'Cameras' },
-            { number: '1000+', label: 'Clients' }
-          ].map((stat, index) => (
-            <motion.div 
-              key={index}
-              className="stat-item"
-              whileHover={{ y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <span className="stat-number">{stat.number}</span>
-              <span className="stat-label">{stat.label}</span>
-            </motion.div>
-          ))}
-        </motion.div> */}
       </div>
     </section>
   );
