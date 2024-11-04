@@ -32,12 +32,14 @@ const Navbar = () => {
         </motion.div>
 
         <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-          <a href="#home">Home</a>
-          <a href="#features">Features</a>
-          <a href="#solutions">Solutions</a>
-          <a href="#demo">Live Demo</a>
-          <a href="#contact">Contact</a>
-          <button className="login-btn">Login</button>
+          <a href="#home" className="nav-link">Home</a>
+          <a href="#features" className="nav-link">Features</a>
+          <a href="#solutions" className="nav-link">Solutions</a>
+          <a href="#demo" className="nav-link">Live Demo</a>
+          <a href="#contact" className="nav-link">Contact</a>
+          <button className="login-btn">
+            Get Started
+          </button>
         </div>
 
         <div 
