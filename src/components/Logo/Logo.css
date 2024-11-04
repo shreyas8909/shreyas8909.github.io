@@ -1,7 +1,7 @@
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -21,19 +21,28 @@
 
 .logo-symbol {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.camera-body {
-  width: 32px;
-  height: 32px;
-  background: linear-gradient(135deg, #14bef0, #28328c);
-  border-radius: 8px;
+.cctv-camera {
   position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.camera-body {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 16px;
+  background: linear-gradient(135deg, #14bef0, #28328c);
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,20 +50,21 @@
 }
 
 .camera-lens {
-  width: 18px;
-  height: 18px;
-  background: white;
+  width: 12px;
+  height: 12px;
+  background: #000;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .lens-inner {
-  width: 12px;
-  height: 12px;
+  width: 6px;
+  height: 6px;
   background: linear-gradient(135deg, #28328c, #14bef0);
   border-radius: 50%;
   position: relative;
@@ -63,23 +73,51 @@
 .lens-inner::after {
   content: '';
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 4px;
-  height: 4px;
+  top: 1px;
+  left: 1px;
+  width: 2px;
+  height: 2px;
   background: white;
   border-radius: 50%;
   opacity: 0.8;
 }
 
-.camera-detail {
+.camera-mount {
   position: absolute;
-  top: 6px;
-  right: 6px;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mount-arm {
+  width: 4px;
+  height: 14px;
+  background: linear-gradient(to bottom, #14bef0, #28328c);
+  margin: 0 auto;
+}
+
+.mount-base {
+  width: 16px;
+  height: 4px;
+  background: linear-gradient(to right, #14bef0, #28328c);
+  border-radius: 2px;
+  margin-top: 2px;
+}
+
+.camera-light {
+  position: absolute;
+  top: 8px;
+  right: 8px;
   width: 4px;
   height: 4px;
-  background: rgba(255, 255, 255, 0.8);
+  background: #ff4444;
   border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 
 .logo-text {
@@ -102,12 +140,16 @@
 
 /* Hover effects */
 .logo-container:hover .camera-body {
-  transform: rotate(-5deg) scale(1.05);
+  transform: translateX(-50%) rotate(-5deg);
   box-shadow: 0 4px 15px rgba(20, 190, 240, 0.4);
 }
 
 .logo-container:hover .lens-inner {
   transform: scale(1.1);
+}
+
+.logo-container:hover .camera-light {
+  animation: blink 0.5s infinite;
 }
 
 /* Dark theme support */
