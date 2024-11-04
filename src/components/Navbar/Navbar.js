@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import Logo from '../Logo/Logo';
+import NeuralkartLogo from '../Logo/NeuralkartLogo';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -36,11 +37,20 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="navbar-container">
-        <motion.div 
-          whileHover={{ scale: 1.05 }}
-        >
-          <Logo size="medium" />
-        </motion.div>
+        <div className="logo-group">
+          {/* <motion.div 
+            whileHover={{ scale: 1.05 }}
+            style={{ marginRight: '20px' }}
+          >
+            <Logo size="medium" />
+          </motion.div>
+          <div className="logo-separator"></div> */}
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+          >
+            <NeuralkartLogo size="medium" />
+          </motion.div>
+        </div>
 
         <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
           <a href="#home" className="nav-link" onClick={handleNavClick('home')}>Home</a>
@@ -48,9 +58,6 @@ const Navbar = () => {
           <a href="#solutions" className="nav-link" onClick={handleNavClick('solutions')}>Solutions</a>
           <a href="#demo" className="nav-link" onClick={handleNavClick('demo')}>Live Demo</a>
           <a href="#contact" className="nav-link" onClick={handleNavClick('contact')}>Contact</a>
-          {/* <button className="login-btn">
-            Get Started
-          </button> */}
         </div>
 
         <div 

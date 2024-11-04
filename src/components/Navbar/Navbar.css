@@ -128,4 +128,28 @@
     width: 100%;
     text-align: center;
   }
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+}
+
+.logo-separator {
+  width: 1px;
+  height: 30px;
+  background: linear-gradient(to bottom, transparent, #14bef0, transparent);
+  margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .logo-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo-separator {
+    display: none;
+  }
 } 
