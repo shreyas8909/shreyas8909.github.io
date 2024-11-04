@@ -1,0 +1,118 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Logo sizes */
+.logo-container.small {
+  transform: scale(0.8);
+}
+
+.logo-container.medium {
+  transform: scale(1);
+}
+
+.logo-container.large {
+  transform: scale(1.2);
+}
+
+.logo-symbol {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-body {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #14bef0, #28328c);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(20, 190, 240, 0.3);
+}
+
+.camera-lens {
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.lens-inner {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #28328c, #14bef0);
+  border-radius: 50%;
+  position: relative;
+}
+
+.lens-inner::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.camera-detail {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+}
+
+.logo-text .n {
+  color: #14bef0;
+}
+
+.logo-text .gage {
+  background: linear-gradient(45deg, #14bef0, #28328c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hover effects */
+.logo-container:hover .camera-body {
+  transform: rotate(-5deg) scale(1.05);
+  box-shadow: 0 4px 15px rgba(20, 190, 240, 0.4);
+}
+
+.logo-container:hover .lens-inner {
+  transform: scale(1.1);
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .logo-text {
+    color: white;
+  }
+} 

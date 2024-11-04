@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaVideo, FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import Logo from '../Logo/Logo';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -36,11 +37,9 @@ const Navbar = () => {
     >
       <div className="navbar-container">
         <motion.div 
-          className="logo"
           whileHover={{ scale: 1.05 }}
         >
-          <FaVideo className="logo-icon" />
-          <span>nGage</span>
+          <Logo size="medium" />
         </motion.div>
 
         <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
