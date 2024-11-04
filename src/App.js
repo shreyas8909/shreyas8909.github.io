@@ -4,6 +4,8 @@ import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import Features from './components/Features/Features';
 import Solutions from './components/Solutions/Solutions';
+import LiveDemo from './components/LiveDemo/LiveDemo';
+import Contact from './components/Contact/Contact';
 import './styles/global.css';
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
         <Hero />
         <Features />
         <Solutions />
+        <LiveDemo />
+        <Contact />
       </div>
     </Router>
   );
