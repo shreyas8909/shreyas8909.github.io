@@ -15,4 +15,16 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   color: var(--text-color);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust this value based on your navbar height */
+}
+
+/* Add this if you want to disable smooth scroll for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 } 

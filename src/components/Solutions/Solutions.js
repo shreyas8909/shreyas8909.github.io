@@ -87,7 +87,7 @@ const solutionsList = [
 
 const Solutions = () => {
   return (
-    <section className="solutions-section" id="solutions">
+    <section id="solutions" className="solutions-section">
       <div className="solutions-container">
         <div className="solutions-header">
           <h2 className="solutions-title">

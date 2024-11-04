@@ -82,7 +82,7 @@ const Features = () => {
   console.log("Features component rendering");
 
   return (
-    <section className="features-section" id="features">
+    <section id="features" className="features-section">
       <div className="features-container">
         <div className="features-header">
           <h2 className="features-title">

@@ -21,6 +21,19 @@ const Footer = () => {
     });
   };
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+      const offset = section.offsetTop - navbarHeight;
+      
+      window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <footer className="footer">
       <button className="scroll-to-top" onClick={scrollToTop} aria-label="Scroll to top">
@@ -36,7 +49,7 @@ const Footer = () => {
           <div className="contact-info">
             <div className="contact-item">
               <FaEnvelope />
-              <a href="mailto:contact@neuralkart.com">contact@neuralkart.com</a>
+              <a href="mailto:info@neuralkart.com">info@neuralkart.com</a>
             </div>
             <div className="contact-item">
               <FaPhone />
@@ -52,10 +65,10 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Quick Links</h4>
           <ul className="footer-links">
-            <li><a href="#features">Features</a></li>
-            <li><a href="#solutions">Solutions</a></li>
-            <li><a href="#demo">Live Demo</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#features" onClick={(e) => { e.preventDefault(); scrollToSection('features'); }}>Features</a></li>
+            <li><a href="#solutions" onClick={(e) => { e.preventDefault(); scrollToSection('solutions'); }}>Solutions</a></li>
+            <li><a href="#demo" onClick={(e) => { e.preventDefault(); scrollToSection('demo'); }}>Live Demo</a></li>
+            <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
           </ul>
         </div>
 
