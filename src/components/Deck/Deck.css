@@ -1,0 +1,226 @@
+.deck {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f8f9fa;
+}
+
+.slide {
+  min-height: 100vh;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  page-break-after: always;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  border-radius: 10px;
+}
+
+.content {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Title Slide */
+.title-slide {
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+}
+
+.logo-wrapper {
+  margin-bottom: 2rem;
+}
+
+.logo-icon {
+  font-size: 5rem;
+  color: #14BEF0;
+}
+
+/* Typography */
+h1 {
+  font-size: 4rem;
+  color: #14BEF0;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: #444;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+  color: #555;
+  margin: 1rem 0;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.contact {
+  font-size: 1.4rem;
+  color: #14BEF0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Icons */
+.header-icon {
+  color: #14BEF0;
+  font-size: 2rem;
+}
+
+.subheader-icon {
+  color: #14BEF0;
+  font-size: 1.6rem;
+}
+
+.inline-icon {
+  color: #14BEF0;
+}
+
+.list-icon {
+  color: #14BEF0;
+  margin-right: 1rem;
+}
+
+/* Feature Cards */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: #14BEF0;
+  margin-bottom: 1rem;
+}
+
+/* Analytics Cards */
+.analytics-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.analytics-card {
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.analytics-card:hover {
+  transform: translateY(-5px);
+}
+
+.analytics-icon {
+  font-size: 2.5rem;
+  color: #14BEF0;
+  margin-bottom: 1rem;
+}
+
+/* Insights Grid */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.insight-card {
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.insight-icon {
+  font-size: 2rem;
+  color: #14BEF0;
+  margin-bottom: 1rem;
+}
+
+/* Value and Benefits */
+.value-grid, .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.value-card, .benefit-card {
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon, .benefit-icon {
+  font-size: 2rem;
+  color: #14BEF0;
+  margin-bottom: 1rem;
+}
+
+/* Lists */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555;
+}
+
+/* Print Styles */
+@media print {
+  .slide {
+    page-break-after: always;
+    break-after: page;
+    box-shadow: none;
+    margin: 0;
+    background: white;
+  }
+}
