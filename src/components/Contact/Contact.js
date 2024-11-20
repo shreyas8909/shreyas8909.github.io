@@ -25,13 +25,13 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    {
-      icon: <FaPhone />,
-      title: 'Phone',
-      content: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
-      color: '#14bef0'
-    },
+    // {
+    //   icon: <FaPhone />,
+    //   title: 'Phone',
+    //   content: '+1 (555) 123-4567',
+    //   link: 'tel:+15551234567',
+    //   color: '#14bef0'
+    // },
     {
       icon: <FaEnvelope />,
       title: 'Email',
@@ -90,7 +90,7 @@ const Contact = () => {
               ))}
             </div>
 
-            <div className="business-hours">
+            {/* <div className="business-hours">
               <div className="hours-header">
                 <FaClock className="hours-icon" />
                 <h3>Business Hours</h3>
@@ -103,7 +103,7 @@ const Contact = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="contact-form-container">

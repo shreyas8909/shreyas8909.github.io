@@ -115,13 +115,14 @@
 .pricing-cards {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  padding: 0 15px;
-  margin: 0 auto;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem;
 }
 
 .pricing-card {
-  flex: 0 0 260px;
+  flex: 0 1 280px;
   background: white;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -168,7 +169,7 @@
 
 .pricing-header {
   padding: 20px 15px;
-  text-align: center;
+  /* text-align: center; */
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -177,12 +178,14 @@
   font-size: 1.4rem;
   color: #1a237e;
   font-weight: 700;
+  text-align: center;
 }
 
 .tier-subtitle {
   color: #64748b;
   margin: 6px 0;
   font-size: 0.8rem;
+  /* text-align: center; */
 }
 
 .price-container {
@@ -301,5 +304,42 @@
 
 .pricing-card:nth-child(1) { animation-delay: 0.1s; }
 .pricing-card:nth-child(2) { animation-delay: 0.2s; }
-.pricing-card:nth-child(3) { animation-delay: 0.3s; }
-.pricing-card:nth-child(4) { animation-delay: 0.4s; } 
+.pricing-card:nth-child(4) { animation-delay: 0.4s; }
+
+.base-feature .feature-text {
+  color: #888; /* Lighter color to indicate inherited features */
+}
+
+.collapsible-section {
+  margin-bottom: 10px;
+}
+
+.collapsible-btn {
+  background-color: #e8eaf6;
+  color: #1a237e;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.collapsible-btn:hover {
+  background-color: #c5cae9;
+}
+
+.base-feature {
+  background-color: #f0f4f8;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.base-feature .feature-text {
+  color: #555;
+  font-style: normal;
+} 
