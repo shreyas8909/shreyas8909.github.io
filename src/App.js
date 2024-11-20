@@ -8,6 +8,7 @@ import LiveDemo from './components/LiveDemo/LiveDemo';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Deck from './components/Deck/Deck';
+import License from './components/License/License';
 import './styles/global.css';
 
 function App() {
@@ -26,8 +27,10 @@ function App() {
             <Features />
             <Solutions />
             <LiveDemo />
+            <License />
             <Contact />
             <Footer />
+            
           </div>
         } />
       </Routes>

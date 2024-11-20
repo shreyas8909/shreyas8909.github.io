@@ -1,31 +1,162 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { 
   FaVideo, FaShieldAlt, FaBrain, FaChartLine, 
   FaUsersCog, FaCar, FaUserFriends, FaBell, 
   FaLock, FaServer, FaChartBar, FaClock,
   FaBuilding, FaMoneyBillWave, FaRocket
 } from 'react-icons/fa';
+import Logo from '../Logo/Logo';
+import NeuralKartLogo from '../Logo/NeuralkartLogo';
 import './Deck.css';
 
 const Deck = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Simulated camera feeds and analytics nodes
+    const nodes = [];
+    const connections = [];
+    const numNodes = 15;
+
+    // Initialize nodes
+    for (let i = 0; i < numNodes; i++) {
+      nodes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 3 + 2,
+        type: Math.random() > 0.5 ? 'camera' : 'analytics',
+        speed: Math.random() * 0.5 + 0.2,
+        angle: Math.random() * Math.PI * 2
+      });
+    }
+
+    // Create connections between nodes
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        if (Math.random() > 0.7) {
+          connections.push([i, j]);
+        }
+      }
+    }
+
+    // Animation function
+    function animate() {
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Update and draw nodes
+      nodes.forEach((node, index) => {
+        // Update position
+        node.angle += node.speed * 0.01;
+        node.x += Math.cos(node.angle) * node.speed;
+        node.y += Math.sin(node.angle) * node.speed;
+
+        // Bounce off walls
+        if (node.x < 0 || node.x > canvas.width) node.angle = Math.PI - node.angle;
+        if (node.y < 0 || node.y > canvas.height) node.angle = -node.angle;
+
+        // Draw node
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+        ctx.fillStyle = node.type === 'camera' ? '#14BEF0' : '#28328c';
+        ctx.fill();
+
+        // Draw "data stream" effect
+        if (node.type === 'camera') {
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, node.radius * 4, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(20, 190, 240, ${0.1 + Math.sin(Date.now() * 0.003) * 0.05})`;
+          ctx.stroke();
+        }
+      });
+
+      // Draw connections
+      connections.forEach(([i, j]) => {
+        const nodeA = nodes[i];
+        const nodeB = nodes[j];
+        const dx = nodeA.x - nodeB.x;
+        const dy = nodeA.y - nodeB.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 200) {
+          ctx.beginPath();
+          ctx.moveTo(nodeA.x, nodeA.y);
+          ctx.lineTo(nodeB.x, nodeB.y);
+          
+          // Create data flow effect
+          const gradient = ctx.createLinearGradient(nodeA.x, nodeA.y, nodeB.x, nodeB.y);
+          gradient.addColorStop(0, 'rgba(20, 190, 240, 0.2)');
+          gradient.addColorStop(1, 'rgba(40, 50, 140, 0.2)');
+          
+          ctx.strokeStyle = gradient;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+
+          // Animated data packets
+          const time = Date.now() * 0.001;
+          const pos = (Math.sin(time) + 1) / 2;
+          
+          ctx.beginPath();
+          ctx.arc(
+            nodeA.x + (nodeB.x - nodeA.x) * pos,
+            nodeA.y + (nodeB.y - nodeA.y) * pos,
+            2,
+            0,
+            Math.PI * 2
+          );
+          ctx.fillStyle = '#14BEF0';
+          ctx.fill();
+        }
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // Cleanup
+    return () => {
+      // Cancel animation if needed
+    };
+  }, []);
+
   return (
     <div className="deck">
+      <canvas ref={canvasRef} className="background-canvas" />
       {/* Title Slide */}
-      <section className="slide title-slide">
+      <section className="slide title-slide" style={{
+        background: `linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(20, 190, 240, 0.1) 100%), url('/assets/network-grid.svg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
         <div className="content">
-          <div className="logo-wrapper">
-            <FaBrain className="logo-icon" />
+          <div className="title-content">
+            <div className="logo-container">
+              <NeuralKartLogo size="large" animated={true} />
+            </div>
+            <div className="title-text">
+              <p className="subtitle">Next-Gen Video Management & Analytics</p>
+              <p className="contact">
+                <FaServer className="inline-icon" /> info@neuralkart.com
+              </p>
+            </div>
           </div>
-          <h1>NeuralKart</h1>
-          <p className="subtitle">Intelligent Solutions, Empowered by AI Insights</p>
-          <p className="contact">
-            <FaServer className="inline-icon" /> info@neuralkart.com
-          </p>
         </div>
       </section>
 
       {/* Overview Slide */}
-      <section className="slide">
+      <section className="slide" style={{
+        background: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('/assets/cctv-pattern.svg')`,
+        backgroundSize: '300px',
+        backgroundPosition: 'center',
+      }}>
         <div className="content">
           <h2>
             <FaVideo className="header-icon" />
@@ -49,12 +180,15 @@ const Deck = () => {
       </section>
 
       {/* nGage Features Slide */}
-      <section className="slide">
+      <section className="slide" style={{
+        background: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('/assets/circuit-pattern.svg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
         <div className="content">
-          <h2>
-            <FaRocket className="header-icon" />
-            nGage
-          </h2>
+        <div className="ngage-logo">
+                <Logo size="large" animated={true} />
+              </div>
           <h3>Next-Gen Video Management & Analytics</h3>
           
           <div className="features-grid">
@@ -107,7 +241,11 @@ const Deck = () => {
       </section>
 
       {/* Vehicle Analytics Slide */}
-      <section className="slide">
+      <section className="slide" style={{
+        background: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('/assets/vehicle-analytics-bg.svg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
         <div className="content">
           <h2>
             <FaCar className="header-icon" />
@@ -131,7 +269,11 @@ const Deck = () => {
       </section>
 
       {/* Human Analytics Slide */}
-      <section className="slide">
+      <section className="slide" style={{
+        background: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('/assets/human-analytics-bg.svg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
         <div className="content">
           <h2>
             <FaUserFriends className="header-icon" />
@@ -151,7 +293,11 @@ const Deck = () => {
       </section>
 
       {/* Analytical Insights Slide */}
-      <section className="slide">
+      <section className="slide" style={{
+        background: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('/assets/analytics-grid.svg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
         <div className="content">
           <h2>
             <FaChartLine className="header-icon" />
@@ -181,7 +327,11 @@ const Deck = () => {
       </section>
 
       {/* Value Proposition Slide */}
-      <section className="slide">
+      <section className="slide" style={{
+        background: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('/assets/value-prop-bg.svg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
         <div className="content">
           <h2>
             <FaMoneyBillWave className="header-icon" />

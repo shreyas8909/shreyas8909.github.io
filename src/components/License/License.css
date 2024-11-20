@@ -1,0 +1,204 @@
+.license-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin: 16px;
+}
+
+.license-title {
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.license-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.license-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.license-table th,
+.license-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.license-table th {
+  width: 30%;
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.license-table td {
+  color: #666;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4a90e2;
+  transition: width 0.3s ease;
+}
+
+.camera-count {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .license-container {
+    margin: 8px;
+    padding: 16px;
+  }
+
+  .license-table th,
+  .license-table td {
+    padding: 8px;
+  }
+
+  .license-table th {
+    width: 40%;
+  }
+}
+
+.license-pricing-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+}
+
+.pricing-header {
+  padding: 30px 20px;
+  text-align: center;
+  background: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.pricing-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 20px 0 5px;
+}
+
+.price-period {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.features-list {
+  padding: 30px 20px;
+}
+
+.features-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-list li {
+  margin: 15px 0;
+  color: #555;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.checkmark {
+  color: #4CAF50;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.select-plan-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: #4a90e2;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.select-plan-btn:hover {
+  background: #357abd;
+}
+
+/* Specific styling for different tiers */
+.pricing-card.basic .pricing-header {
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+}
+
+.pricing-card.advanced .pricing-header {
+  background: linear-gradient(145deg, #e3f2fd, #bbdefb);
+}
+
+.pricing-card.professional .pricing-header {
+  background: linear-gradient(145deg, #e8f5e9, #c8e6c9);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-card {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+} 
