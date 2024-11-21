@@ -31,6 +31,7 @@ const Footer = () => {
         top: offset,
         behavior: 'smooth'
       });
+      window.history.pushState(null, '', `#${sectionId}`);
     }
   };
 
@@ -51,14 +52,6 @@ const Footer = () => {
               <FaEnvelope />
               <a href="mailto:info@neuralkart.com">info@neuralkart.com</a>
             </div>
-            {/* <div className="contact-item">
-              <FaPhone />
-              <a href="tel:+1234567890">+1 (234) 567-890</a>
-            </div> */}
-            {/* <div className="contact-item">
-              <FaMapMarkerAlt />
-              <span>123 Innovation Street, Tech City</span>
-            </div> */}
           </div>
         </div>
 
@@ -68,6 +61,7 @@ const Footer = () => {
             <li><a href="#features" onClick={(e) => { e.preventDefault(); scrollToSection('features'); }}>Features</a></li>
             <li><a href="#solutions" onClick={(e) => { e.preventDefault(); scrollToSection('solutions'); }}>Solutions</a></li>
             <li><a href="#demo" onClick={(e) => { e.preventDefault(); scrollToSection('demo'); }}>Live Demo</a></li>
+            <li><a href="#solution-tiers" onClick={(e) => { e.preventDefault(); scrollToSection('solution-tiers'); }}>Solution Tiers</a></li>
             <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
           </ul>
         </div>

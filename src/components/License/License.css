@@ -129,6 +129,10 @@
   position: relative;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 520px;
 }
 
 .pricing-card::-webkit-scrollbar {
@@ -207,12 +211,16 @@
 
 .features-list {
   padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .features-list ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  height: 100%;
 }
 
 .feature-item {
@@ -251,6 +259,7 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
+  margin-top: auto;
 }
 
 .select-plan-btn.highlighted-btn {
@@ -342,4 +351,17 @@
 .base-feature .feature-text {
   color: #555;
   font-style: normal;
+}
+
+.license-section {
+  scroll-margin-top: 80px; /* Adjusts for fixed navbar */
+  scroll-behavior: smooth;
+}
+
+.license-pricing-container {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
 } 

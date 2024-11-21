@@ -33,6 +33,7 @@ function App() {
             
           </div>
         } />
+        <Route path="/license" element={<License />} />
       </Routes>
     </Router>
   );

@@ -4,6 +4,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import Logo from '../Logo/Logo';
 import NeuralkartLogo from '../Logo/NeuralkartLogo';
 import './Navbar.css';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,6 +26,7 @@ const Navbar = () => {
         behavior: 'smooth',
         block: 'start'
       });
+      window.history.pushState(null, '', `#${sectionId}`);
     }
     setIsMobileMenuOpen(false);
   };
@@ -57,6 +59,7 @@ const Navbar = () => {
           <a href="#features" className="nav-link" onClick={handleNavClick('features')}>Features</a>
           <a href="#solutions" className="nav-link" onClick={handleNavClick('solutions')}>Solutions</a>
           <a href="#demo" className="nav-link" onClick={handleNavClick('demo')}>Live Demo</a>
+          <a href="#solution-tiers" className="nav-link" onClick={handleNavClick('solution-tiers')}>Solution Tiers</a>
           <a href="#contact" className="nav-link" onClick={handleNavClick('contact')}>Contact</a>
         </div>
 
