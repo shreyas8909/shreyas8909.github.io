@@ -18,7 +18,7 @@ const License = () => {
   const licenseTiers = [
     {
       name: 'Basic',
-      subtitle: 'Essential surveillance',
+      subtitle: 'Essential surveillance foundation',
       features: [
         'Up to 8 Cameras',
         'Single Site',
@@ -33,7 +33,7 @@ const License = () => {
     },
     {
       name: 'Standard',
-      subtitle: 'Small to medium business',
+      subtitle: 'Basic + Additional Features',
       features: [
         'Up to 50 Cameras',
         'Motion Detection',
@@ -49,24 +49,24 @@ const License = () => {
     },
     {
       name: 'Advanced',
-      subtitle: 'Professional surveillance',
+      subtitle: 'Standard + Additional Features',
       features: [
         '50+ Cameras',
         'Multiple Sites',
         'Centralized Management',
         'Unlimited User Access',
-        'Priority Support (24/7)',
-        'Data Redundancy',
-        'Failover Management'
+        'Priority Support (24/7)'
       ],
       highlight: true
     },
     {
       name: 'Expert',
-      subtitle: 'Enterprise solution',
+      subtitle: 'Advanced + Additional Features',
       features: [
         'Video Surveillance as a Service (vSaaS)',
-        'AI-Powered Analytics'
+        'AI-Powered Analytics',
+        'Data Redundancy',
+        'Failover Management'
       ],
       highlight: false
     }
