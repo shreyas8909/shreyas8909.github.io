@@ -1,0 +1,116 @@
+.neuralkart-footer {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  padding: 80px 0 20px;
+  color: #fff;
+}
+
+.neuralkart-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.neuralkart-footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.neuralkart-footer-logo-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.neuralkart-footer-description {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.neuralkart-footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.neuralkart-footer-section h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.neuralkart-footer-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(45deg, #14bef0, #28328c);
+}
+
+.neuralkart-footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.neuralkart-footer-section ul li {
+  margin-bottom: 1rem;
+}
+
+.neuralkart-footer-section ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+.neuralkart-footer-section ul li a:hover {
+  color: #14bef0;
+}
+
+.neuralkart-footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.neuralkart-footer-bottom p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .neuralkart-footer {
+    padding: 60px 0 20px;
+  }
+
+  .neuralkart-footer-main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .neuralkart-footer-links {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .neuralkart-footer-logo-section {
+    text-align: center;
+    align-items: center;
+  }
+
+  .neuralkart-footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .neuralkart-footer-section {
+    text-align: center;
+  }
+} 
