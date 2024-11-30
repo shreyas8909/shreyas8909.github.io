@@ -5,6 +5,7 @@ import HomeFooter from '../HomeFooter/HomeFooter';
 import { motion } from 'framer-motion';
 import { FaRobot, FaChartLine, FaShieldAlt, FaCode, FaBrain, FaUserTie } from 'react-icons/fa';
 import './Home.css';
+import Contact from '../Contact/Contact';
 
 const WhyChooseSection = () => {
   const features = [
@@ -169,6 +170,9 @@ const Home = () => {
       <WhyChooseSection />
       <ProductsSection />
       <AboutSection />
+
+    <Contact />
+
       <HomeFooter />
     </div>
   );

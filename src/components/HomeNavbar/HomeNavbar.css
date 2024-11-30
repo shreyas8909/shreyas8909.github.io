@@ -1,0 +1,92 @@
+.neuralkart-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.2rem 0;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.neuralkart-navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 1rem 0;
+}
+
+.neuralkart-navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.neuralkart-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.neuralkart-nav-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.neuralkart-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #14bef0;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.neuralkart-nav-link:hover {
+  color: #14bef0;
+}
+
+.neuralkart-nav-link:hover::after {
+  width: 100%;
+}
+
+.neuralkart-contact-button {
+  background: #14bef0;
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(20, 190, 240, 0.3);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.neuralkart-contact-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(20, 190, 240, 0.4);
+}
+
+@media (max-width: 768px) {
+  .neuralkart-nav-links {
+    display: none;
+  }
+
+  .neuralkart-navbar-container {
+    padding: 0 1rem;
+  }
+} 

@@ -62,9 +62,9 @@ const Contact = () => {
             Get in Touch
             <span className="title-accent"></span>
           </h2>
-          <p className="contact-subtitle">
+          {/* <p className="contact-subtitle">
             Have questions about our VMS solution? We'd love to hear from you.
-          </p>
+          </p> */}
         </div>
 
         <div className="contact-content">

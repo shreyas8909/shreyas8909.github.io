@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import './HomeHero.css';
+import '../Hero/Hero.css';
+import '../HomeHero/HomeHero.css'
 
 const HomeHero = () => {
   const canvasRef = useRef(null);
@@ -11,91 +12,119 @@ const HomeHero = () => {
     let animationFrameId;
     let particles = [];
 
-    const resizeCanvas = () => {
+    const setCanvasSize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
 
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = Math.random() * 2 - 1;
-        this.vy = Math.random() * 2 - 1;
-        this.radius = Math.random() * 2;
-      }
-
-      move() {
-        if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
-        if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
-        this.x += this.vx;
-        this.y += this.vy;
-      }
-    }
-
-    const init = () => {
+    const initParticles = () => {
       particles = [];
-      for (let i = 0; i < 100; i++) {
-        particles.push(new Particle());
+      const numberOfParticles = Math.floor(window.innerWidth * window.innerHeight / 10000);
+      
+      for (let i = 0; i < numberOfParticles; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 2 + 1,
+          vx: Math.random() * 2 - 1,
+          vy: Math.random() * 2 - 1,
+          connections: []
+        });
       }
     };
 
-    const animate = () => {
+    const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = 'rgba(20, 190, 240, 0.1)';
-      ctx.strokeStyle = 'rgba(20, 190, 240, 0.05)';
-
-      particles.forEach((particle, index) => {
-        particle.move();
+      
+      particles.forEach((particle, i) => {
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        
+        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+        
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(20, 190, 240, 0.3)';
         ctx.fill();
-
-        for (let j = index + 1; j < particles.length; j++) {
+        
+        particle.connections = [];
+        for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[j].x - particle.x;
           const dy = particles[j].y - particle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 100) {
+          
+          if (distance < 150) {
+            particle.connections.push(j);
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(20, 190, 240, ${0.15 - distance / 1500})`;
+            ctx.lineWidth = 1;
             ctx.stroke();
           }
         }
       });
-
-      animationFrameId = requestAnimationFrame(animate);
+      
+      animationFrameId = requestAnimationFrame(draw);
     };
 
-    init();
-    animate();
+    const handleResize = () => {
+      setCanvasSize();
+      initParticles();
+    };
+
+    setCanvasSize();
+    initParticles();
+    draw();
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
+  const handleGetStarted = () => {
+    const featuresSection = document.getElementById('features');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  const handleWatchDemo = () => {
+    const demoSection = document.getElementById('demo');
+    if (demoSection) {
+      demoSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
-    <div className="neuralkart-hero">
-      <canvas ref={canvasRef} className="neuralkart-hero-canvas" />
-      <div className="neuralkart-hero-overlay" />
-      <div className="neuralkart-hero-content">
+    <section className="hero" id="home">
+      <canvas ref={canvasRef} className="hero-canvas" />
+      <div className="hero-overlay"></div>
+      <div className="hero-content">
         <motion.div
-          className="neuralkart-hero-text-content"
+          className="hero-text-content"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1>
-            Welcome to <span className="neuralkart-gradient-text">Neuralkart</span>
+          
+
+          <h1 className="hero-title">
+          Welcome to 
+            <span className="gradient-text"> Neuralkart</span>
           </h1>
-          <p className="neuralkart-hero-subtitle">
-            Revolutionizing Analytics for Your Business
+
+          <p className="hero-subtitle">
+          Revolutionizing Analytics for Your Business
           </p>
           <p className="neuralkart-hero-description">
             Unlock the Power of Data Insights and Make Informed Decisions. Neuralkart is a cutting-edge analytics company that
@@ -113,7 +142,7 @@ const HomeHero = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

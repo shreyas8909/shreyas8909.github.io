@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import Logo from '../Logo/Logo';
 import NeuralkartLogo from '../Logo/NeuralkartLogo';
-import './Navbar.css';
+import '..//Navbar/Navbar.css';
 import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
+const HomeNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -55,10 +55,9 @@ const Navbar = () => {
         </div>
 
         <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-          <a href="#features" className="nav-link" onClick={handleNavClick('features')}>Features</a>
-          <a href="#solutions" className="nav-link" onClick={handleNavClick('solutions')}>Solutions</a>
-          <a href="#demo" className="nav-link" onClick={handleNavClick('demo')}>Live Demo</a>
-          <a href="#solution-tiers" className="nav-link" onClick={handleNavClick('solution-tiers')}>Solution Tiers</a>
+          <a href="#why-choose" className="nav-link" onClick={handleNavClick('why-choose')}>Why Neuralkart</a>
+          <a href="#products" className="nav-link" onClick={handleNavClick('products')}>Products</a>
+          <a href="#about" className="nav-link" onClick={handleNavClick('about')}>About</a>
           <a href="#contact" className="nav-link" onClick={handleNavClick('contact')}>Contact</a>
         </div>
 
@@ -73,4 +72,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default HomeNavbar; 

@@ -9,6 +9,7 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Deck from './components/Deck/Deck';
 import License from './components/License/License';
+import Home from './components/Home/Home';
 import './styles/global.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <Router basename={basename}>
       <Routes>
         <Route path="/deck" element={<Deck />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/" element={
           <div className="App">
             <Navbar />
@@ -30,7 +32,6 @@ function App() {
             <License />
             <Contact />
             <Footer />
-            
           </div>
         } />
         <Route path="/license" element={<License />} />
