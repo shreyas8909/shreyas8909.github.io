@@ -118,6 +118,59 @@ const ProductsSection = () => {
   );
 };
 
+const ProductDevelopmentSection = () => {
+  return (
+    <section id="product-development" className="neuralkart-product-dev-section">
+      <div className="neuralkart-section-header">
+        <h2>Custom Product Development</h2>
+      </div>
+      <div className="neuralkart-product-dev-grid">
+        <motion.div 
+          className="neuralkart-product-dev-card"
+          whileHover={{ scale: 1.02 }}
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="neuralkart-product-icon">
+            <FaCode />
+          </div>
+          <h3>Cutting-Edge Solutions</h3>
+          <p className="card-subtitle">Transforming ideas into powerful digital solutions</p>
+          <ul>
+            <li><span className="highlight">Enterprise Solutions</span> - Scalable and secure applications</li>
+            <li><span className="highlight">AI/ML Integration</span> - Smart automation and insights</li>
+            <li><span className="highlight">Cloud Architecture</span> - Modern cloud-native applications</li>
+            <li><span className="highlight">Microservices</span> - Flexible and maintainable systems</li>
+            <li><span className="highlight">DevOps Excellence</span> - Continuous delivery pipeline</li>
+          </ul>
+        </motion.div>
+
+        <motion.div 
+          className="neuralkart-product-dev-card"
+          whileHover={{ scale: 1.02 }}
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <div className="neuralkart-product-icon">
+            <FaBrain />
+          </div>
+          <h3>Development Process</h3>
+          <p className="card-subtitle">Proven methodology for successful delivery</p>
+          <ul>
+            <li><span className="highlight">Agile Framework</span> - Iterative and adaptive development</li>
+            <li><span className="highlight">Rapid Prototyping</span> - Quick validation of concepts</li>
+            <li><span className="highlight">CI/CD Pipeline</span> - Automated testing and deployment</li>
+            <li><span className="highlight">Quality Assurance</span> - Comprehensive testing strategy</li>
+            <li><span className="highlight">24/7 Support</span> - Dedicated maintenance and updates</li>
+          </ul>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 const AboutSection = () => {
   return (
     <section id="about" className="neuralkart-about-section">
@@ -169,10 +222,9 @@ const Home = () => {
       <HomeHero />
       <WhyChooseSection />
       <ProductsSection />
+      <ProductDevelopmentSection />
       <AboutSection />
-
-    <Contact />
-
+      <Contact />
       <HomeFooter />
     </div>
   );

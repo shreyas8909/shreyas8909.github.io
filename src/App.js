@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import Features from './components/Features/Features';
@@ -13,12 +13,8 @@ import Home from './components/Home/Home';
 import './styles/global.css';
 
 function App() {
-  const basename = process.env.NODE_ENV === 'production' 
-    ? process.env.PUBLIC_URL 
-    : '';
-
   return (
-    <Router basename={basename}>
+    <Router>
       <Routes>
         <Route path="/deck" element={<Deck />} />
         <Route path="/home" element={<Home />} />
