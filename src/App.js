@@ -17,8 +17,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/deck" element={<Deck />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/" element={
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={
           <div className="App">
             <Navbar />
             <Hero />
