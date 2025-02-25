@@ -608,66 +608,31 @@
   transition: transform 0.3s ease;
 }
 
-.docai-logo {
-  background: transparent !important;
-  box-shadow: none !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px !important;  /* Reduced from 80px */
-  height: 60px !important; /* Reduced from 80px */
-}
-
-.docai-logo svg {
-  width: 60px !important;  /* Reduced from 80px */
-  height: 60px !important; /* Reduced from 80px */
-  transform: scale(1);
-}
-
-.neuralkart-product-card:hover .docai-logo svg {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-
+/* Common styles for all logos */
+.docai-logo,
+.vms-logo,
 .chatbot-logo {
   background: transparent !important;
   box-shadow: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px !important;
-  height: 80px !important;
+  width: 70px !important;  /* Standardized size */
+  height: 70px !important; /* Standardized size */
 }
 
+.docai-logo svg,
+.vms-logo svg,
 .chatbot-logo svg {
-  width: 80px !important;
-  height: 80px !important;
-  transform: scale(1);
+  width: 70px !important;  /* Standardized size */
+  height: 70px !important; /* Standardized size */
+  transform: scale(1.2);   /* Consistent scale */
 }
 
+.neuralkart-product-card:hover .docai-logo svg,
+.neuralkart-product-card:hover .vms-logo svg,
 .neuralkart-product-card:hover .chatbot-logo svg {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-
-.vms-logo {
-  background: transparent !important;
-  box-shadow: none !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px !important;
-  height: 60px !important;
-}
-
-.vms-logo svg {
-  width: 60px !important;
-  height: 60px !important;
-  transform: scale(1.2);
-}
-
-.neuralkart-product-card:hover .vms-logo svg {
-  transform: scale(1.3);
+  transform: scale(1.3);   /* Consistent hover scale */
   transition: transform 0.3s ease;
 }
 

@@ -152,4 +152,34 @@
   .logo-separator {
     display: none;
   }
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.back-to-main {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 20px;
+  background: rgba(20, 190, 240, 0.1);
+  transition: all 0.3s ease;
+}
+
+.back-to-main:hover {
+  background: rgba(20, 190, 240, 0.2);
+  transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+  .back-to-main {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
 } 

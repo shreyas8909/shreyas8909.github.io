@@ -104,7 +104,10 @@ const ProductsSection = () => {
         <motion.div 
           className="neuralkart-product-card clickable"
           whileHover={{ scale: 1.02 }}
-          onClick={() => window.location.href = '/#home'}
+          onClick={() => {
+            window.location.href = '/#home';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           style={{ cursor: 'pointer' }}
         >
           <div className="product-badge">Featured Product</div>

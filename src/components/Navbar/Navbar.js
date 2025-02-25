@@ -4,7 +4,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import Logo from '../Logo/Logo';
 import NeuralkartLogo from '../Logo/NeuralkartLogo';
 import './Navbar.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,19 +54,24 @@ const Navbar = () => {
           </motion.div>
         </div>
 
+        <div className="nav-actions">
+          <Link to="/" className="back-to-main">
+            ← Back to Main Site
+          </Link>
+          <div 
+            className="mobile-menu-icon"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </div>
+        </div>
+
         <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
           <a href="#features" className="nav-link" onClick={handleNavClick('features')}>Features</a>
           <a href="#solutions" className="nav-link" onClick={handleNavClick('solutions')}>Solutions</a>
           <a href="#demo" className="nav-link" onClick={handleNavClick('demo')}>Live Demo</a>
           <a href="#solution-tiers" className="nav-link" onClick={handleNavClick('solution-tiers')}>Solution Tiers</a>
           <a href="#contact" className="nav-link" onClick={handleNavClick('contact')}>Contact</a>
-        </div>
-
-        <div 
-          className="mobile-menu-icon"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </div>
       </div>
     </motion.nav>

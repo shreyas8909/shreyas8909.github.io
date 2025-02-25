@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import Logo from '../Logo/Logo';
 import NeuralkartLogo from '../Logo/NeuralkartLogo';
-import '..//Navbar/Navbar.css';
-import { NavLink } from 'react-router-dom';
+import './HomeNavbar.css';
 
 const HomeNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,18 +39,13 @@ const HomeNavbar = () => {
     >
       <div className="navbar-container">
         <div className="logo-group">
-          {/* <motion.div 
-            whileHover={{ scale: 1.05 }}
-            style={{ marginRight: '20px' }}
-          >
-            <Logo size="medium" />
-          </motion.div>
-          <div className="logo-separator"></div> */}
-          <motion.div 
-            whileHover={{ scale: 1.05 }}
-          >
+          <motion.div whileHover={{ scale: 1.05 }}>
             <NeuralkartLogo size="medium" />
           </motion.div>
+        </div>
+
+        <div className="mobile-menu-icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </div>
 
         <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
@@ -59,13 +53,6 @@ const HomeNavbar = () => {
           <a href="#products" className="nav-link" onClick={handleNavClick('products')}>Products</a>
           <a href="#about" className="nav-link" onClick={handleNavClick('about')}>About</a>
           <a href="#contact" className="nav-link" onClick={handleNavClick('contact')}>Contact</a>
-        </div>
-
-        <div 
-          className="mobile-menu-icon"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </div>
       </div>
     </motion.nav>
