@@ -102,11 +102,12 @@ const ProductsSection = () => {
         </motion.div>
 
         <motion.div 
-          className="neuralkart-product-card"
+          className="neuralkart-product-card clickable"
           whileHover={{ scale: 1.02 }}
           onClick={() => window.location.href = '/#home'}
           style={{ cursor: 'pointer' }}
         >
+          <div className="product-badge">Featured Product</div>
           <div className="neuralkart-product-icon vms-logo">
             <VMSLogo size="medium" />
           </div>
@@ -119,7 +120,7 @@ const ProductsSection = () => {
             <li>Cloud Integration</li>
           </ul>
           <div className="learn-more">
-            Learn More →
+            Explore Product →
           </div>
         </motion.div>
 
