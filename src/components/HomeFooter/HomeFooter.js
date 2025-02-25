@@ -1,14 +1,6 @@
 import React from 'react';
 import NeuralkartLogo from '../Logo/NeuralkartLogo';
-import { 
-  FaGithub, 
-  FaLinkedin, 
-  FaTwitter, 
-  FaEnvelope, 
-  FaPhone, 
-  FaMapMarkerAlt,
-  FaArrowUp 
-} from 'react-icons/fa';
+import { FaEnvelope, FaArrowUp } from 'react-icons/fa';
 import '../Footer/Footer.css';
 
 const HomeFooter = () => {
@@ -26,7 +18,6 @@ const HomeFooter = () => {
     if (section) {
       const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
       const offset = section.offsetTop - navbarHeight;
-      
       window.scrollTo({
         top: offset,
         behavior: 'smooth'
@@ -41,7 +32,7 @@ const HomeFooter = () => {
         <FaArrowUp />
       </button>
 
-      <div className="footer-content">
+      <div className="footer-content compact">
         <div className="footer-section brand-section">
           <NeuralkartLogo size="small" animated={false} textColor="#fff" networkColor="#14bef0" />
           <p className="footer-description">
@@ -55,58 +46,19 @@ const HomeFooter = () => {
           </div>
         </div>
 
-        <div className="footer-section">
+        <div className="footer-section quick-links">
           <h4>Quick Links</h4>
-          <ul className="footer-links">
-            <li><a href="#why-choose" onClick={(e) => { e.preventDefault(); scrollToSection('why-choose'); }}>Why Neuralkart</a></li>
-            <li><a href="#products" onClick={(e) => { e.preventDefault(); scrollToSection('products'); }}>Products</a></li>
-            <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About Us</a></li>
-            <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
-          </ul>
-        </div>
-
-        <div className="footer-section">
-          <h4>Resources</h4>
-          <ul className="footer-links">
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/documentation">Documentation</a></li>
-            <li><a href="/support">Support</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
-          </ul>
-        </div>
-
-        <div className="footer-section">
-          <h4>Connect With Us</h4>
-          <div className="social-links">
-            <a href="https://github.com/neuralkart" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <FaGithub />
-            </a>
-            <a href="https://linkedin.com/company/neuralkart" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <FaLinkedin />
-            </a>
-            <a href="https://twitter.com/neuralkart" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <FaTwitter />
-            </a>
-          </div>
-          <div className="newsletter">
-            <h5>Subscribe to Our Newsletter</h5>
-            <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-              <input type="email" placeholder="Enter your email" aria-label="Email for newsletter" />
-              <button type="submit">Subscribe</button>
-            </form>
+          <div className="links-grid">
+            <a href="#why-choose" onClick={(e) => { e.preventDefault(); scrollToSection('why-choose'); }}>Why Neuralkart</a>
+            <a href="#products" onClick={(e) => { e.preventDefault(); scrollToSection('products'); }}>Products</a>
+            <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About Us</a>
+            <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
         <p>&copy; {currentYear} NeuralKart. All rights reserved.</p>
-        <div className="footer-bottom-links">
-          <a href="/terms">Terms of Service</a>
-          <span className="separator">|</span>
-          <a href="/privacy">Privacy Policy</a>
-          <span className="separator">|</span>
-          <a href="/cookies">Cookie Policy</a>
-        </div>
       </div>
     </footer>
   );
