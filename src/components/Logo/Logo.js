@@ -1,7 +1,8 @@
 import React from 'react';
 import './Logo.css';
+import { motion } from 'framer-motion';
 
-const Logo = ({ size = 'medium' }) => {
+const Logo = ({ size = 'medium', showText = true }) => {
   return (
     <div className={`logo-container ${size}`}>
       <div className="logo-symbol">
@@ -18,10 +19,12 @@ const Logo = ({ size = 'medium' }) => {
           <div className="camera-light"></div>
         </div>
       </div>
-      <span className="logo-text">
-        <span className="n">n</span>
-        <span className="gage">Gage</span>
-      </span>
+      {showText && (
+        <span className="logo-text">
+          <span className="n">n</span>
+          <span className="gage">Gage</span>
+        </span>
+      )}
     </div>
   );
 };

@@ -4,6 +4,10 @@ import HomeHero from '../HomeHero/HomeHero';
 import HomeFooter from '../HomeFooter/HomeFooter';
 import { motion } from 'framer-motion';
 import { FaRobot, FaChartLine, FaShieldAlt, FaCode, FaBrain, FaUserTie } from 'react-icons/fa';
+import Logo from '../Logo/Logo';
+import DocAILogo from '../Logo/DocAILogo';
+import ChatbotLogo from '../Logo/ChatbotLogo';
+import VMSLogo from '../Logo/VMSLogo';
 import './Home.css';
 import Contact from '../Contact/Contact';
 
@@ -84,8 +88,8 @@ const ProductsSection = () => {
           className="neuralkart-product-card"
           whileHover={{ scale: 1.02 }}
         >
-          <div className="neuralkart-product-icon">
-            <FaRobot />
+          <div className="neuralkart-product-icon docai-logo">
+            <DocAILogo size="medium" />
           </div>
           <h3>Document Processing AI Tool</h3>
           <ul>
@@ -100,9 +104,31 @@ const ProductsSection = () => {
         <motion.div 
           className="neuralkart-product-card"
           whileHover={{ scale: 1.02 }}
+          onClick={() => window.location.href = '/#home'}
+          style={{ cursor: 'pointer' }}
         >
-          <div className="neuralkart-product-icon">
-            <FaBrain />
+          <div className="neuralkart-product-icon vms-logo">
+            <VMSLogo size="medium" />
+          </div>
+          <h3>Smart Vision Analytics</h3>
+          <ul>
+            <li>Advanced Video Management</li>
+            <li>AI-Powered Analytics</li>
+            <li>Real-time Processing</li>
+            <li>Advanced Security Features</li>
+            <li>Cloud Integration</li>
+          </ul>
+          <div className="learn-more">
+            Learn More →
+          </div>
+        </motion.div>
+
+        <motion.div 
+          className="neuralkart-product-card"
+          whileHover={{ scale: 1.02 }}
+        >
+          <div className="neuralkart-product-icon chatbot-logo">
+            <ChatbotLogo size="medium" />
           </div>
           <h3>AI-Powered Chatbots</h3>
           <ul>
