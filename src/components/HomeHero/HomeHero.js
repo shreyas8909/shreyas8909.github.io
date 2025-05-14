@@ -85,20 +85,20 @@ const HomeHero = () => {
     };
   }, []);
 
-  const handleGetStarted = () => {
-    const featuresSection = document.getElementById('features');
-    if (featuresSection) {
-      featuresSection.scrollIntoView({ 
+  const handleDiscoverSolutions = () => {
+    const productsSection = document.getElementById('products');
+    if (productsSection) {
+      productsSection.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });
     }
   };
 
-  const handleWatchDemo = () => {
-    const demoSection = document.getElementById('demo');
-    if (demoSection) {
-      demoSection.scrollIntoView({ 
+  const handleRequestDemo = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });
@@ -116,29 +116,33 @@ const HomeHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          
-
           <h1 className="hero-title">
-          Welcome to 
-            <span className="gradient-text"> Neuralkart</span>
+            <span className="gradient-text">Neuralkart:</span> AI-Powered Underwriting & Claims
           </h1>
-
-          <p className="hero-subtitle">
-          Revolutionizing Analytics for Your Business
-          </p>
+          <h2 className="hero-subtitle">
+            Intelligent. Efficient. Accurate.
+          </h2>
           <p className="neuralkart-hero-description">
-            Unlock the Power of Data Insights and Make Informed Decisions. Neuralkart is a cutting-edge analytics company that
-            empowers businesses to harness the full potential of their data.
+            We're building advanced AI tools to automate and improve insurance underwriting and claims, 
+            starting with transforming medical underwriting.
           </p>
           <div className="neuralkart-hero-buttons">
-            <motion.a
-              href="mailto:info@neuralkart.com"
+            <motion.button
+              onClick={handleDiscoverSolutions}
               className="neuralkart-primary-btn"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Contact us at info@neuralkart.com
-            </motion.a>
+              Discover Our Solutions
+            </motion.button>
+            <motion.button
+              onClick={handleRequestDemo}
+              className="neuralkart-secondary-btn"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Request a Demo
+            </motion.button>
           </div>
         </motion.div>
       </div>

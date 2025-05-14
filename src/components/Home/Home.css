@@ -15,6 +15,8 @@
 .neuralkart-section-header {
   text-align: center;
   margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
 }
 
 .neuralkart-section-header h2 {
@@ -23,6 +25,25 @@
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
+  opacity: 1;
+  visibility: visible;
+  background: linear-gradient(45deg, #14bef0, #28328c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0 20px;
+}
+
+.neuralkart-section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(45deg, #14bef0, #28328c);
+  border-radius: 3px;
 }
 
 .neuralkart-features-grid {
@@ -221,10 +242,10 @@
 
 /* About Section - Enhanced */
 .neuralkart-about-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 100px 20px;
+  background: #f8f9fa;
   position: relative;
-  overflow: hidden;
+  z-index: 2;
 }
 
 .neuralkart-about-section::before {
@@ -238,9 +259,11 @@
 }
 
 .neuralkart-about-content {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px;
+  text-align: center;
+  position: relative;
+  z-index: 3;
 }
 
 .neuralkart-about-cards {
@@ -677,4 +700,511 @@
 .clickable:hover .learn-more {
   transform: translateY(0);
   box-shadow: 0 6px 20px rgba(20, 190, 240, 0.3);
+}
+
+/* Challenges Section - Same as WhyChoose but with different ID */
+.neuralkart-challenges-section {
+  padding: 100px 0;
+  background: #f8f9fa;
+  position: relative;
+  width: 100%;
+}
+
+.neuralkart-challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.neuralkart-challenge-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.neuralkart-challenge-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #14bef0, #28328c);
+  color: white;
+}
+
+.neuralkart-challenge-title {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.neuralkart-challenge-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+/* Product Section Redesign */
+.neuralkart-product-container {
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-product-box {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-product-content {
+  padding: 40px;
+  flex: 1;
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-product-header h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-product-tagline {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-feature {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 3;
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  color: #14bef0;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+.feature-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #333;
+  position: relative;
+  z-index: 3;
+}
+
+.feature-content p {
+  font-size: 1rem;
+  color: #666;
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-product-visual {
+  flex: 1;
+  min-height: 400px;
+  position: relative;
+  z-index: 2;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+}
+
+.underwriting-image {
+  background-image: linear-gradient(45deg, rgba(20, 190, 240, 0.7), rgba(40, 50, 140, 0.9));
+}
+
+.claims-image {
+  background-image: linear-gradient(45deg, rgba(40, 50, 140, 0.7), rgba(20, 190, 240, 0.9));
+}
+
+/* Innovation Section */
+.neuralkart-innovation-section {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+  position: relative;
+  z-index: 2;
+}
+
+.neuralkart-innovation-content {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-innovation-visual {
+  flex: 1;
+  position: relative;
+  z-index: 3;
+}
+
+.innovation-image {
+  width: 100%;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+  background-image: linear-gradient(135deg, rgba(20, 190, 240, 0.6), rgba(40, 50, 140, 0.8));
+}
+
+.neuralkart-innovation-text {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-innovation-text p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #444;
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-innovation-text .disclaimer {
+  font-style: italic;
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 30px;
+  position: relative;
+  z-index: 3;
+}
+
+/* Services Section */
+.neuralkart-services-section {
+  padding: 100px 0;
+  background: #f8f9fa;
+  position: relative;
+}
+
+.neuralkart-services-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.neuralkart-services-intro {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.neuralkart-services-intro p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.neuralkart-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.neuralkart-service-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.neuralkart-service-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 20px;
+  background: linear-gradient(45deg, #14bef0, #28328c);
+  color: white;
+}
+
+.neuralkart-service-title {
+  font-size: 1.3rem;
+  color: #28328c;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Client Success Section */
+.neuralkart-success-section {
+  padding: 80px 20px;
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.neuralkart-success-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-client-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 3;
+}
+
+.chola-ms-logo {
+  width: 200px;
+  height: 100px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #333;
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-success-details {
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-success-details p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #444;
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-case-study {
+  background-color: rgba(248, 249, 250, 0.8);
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 3;
+}
+
+.case-study-point {
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 3;
+}
+
+.case-study-point:last-child {
+  margin-bottom: 0;
+}
+
+.case-study-point h4 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #333;
+  position: relative;
+  z-index: 3;
+}
+
+.highlight {
+  color: #14bef0;
+  font-weight: 700;
+  position: relative;
+  z-index: 3;
+}
+
+.case-study-point p {
+  margin: 0;
+  color: #555;
+  position: relative;
+  z-index: 3;
+}
+
+/* About Section Redesign */
+.neuralkart-about-section {
+  padding: 100px 20px;
+  background: #f8f9fa;
+  position: relative;
+  z-index: 2;
+}
+
+.neuralkart-about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.neuralkart-about-text-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 800px;
+  position: relative;
+  z-index: 4;
+  display: block;
+}
+
+.neuralkart-about-content p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #444;
+  font-size: 1.1rem;
+  opacity: 1;
+  visibility: visible;
+}
+
+.neuralkart-services-text-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 800px;
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .neuralkart-product-box {
+    flex-direction: column;
+  }
+
+  .neuralkart-product-container.reverse .neuralkart-product-box {
+    flex-direction: column;
+  }
+
+  .neuralkart-product-visual {
+    min-height: 300px;
+    order: -1;
+  }
+
+  .neuralkart-innovation-content {
+    flex-direction: column;
+  }
+
+  .neuralkart-innovation-visual {
+    min-height: 300px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .neuralkart-case-study {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .neuralkart-challenges-grid,
+  .neuralkart-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .neuralkart-product-content,
+  .neuralkart-success-content {
+    padding: 30px 20px;
+  }
+
+  .neuralkart-product-visual {
+    min-height: 250px;
+  }
+
+  .neuralkart-product-header h3 {
+    font-size: 1.8rem;
+  }
+
+  .neuralkart-section-header h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Fix for other sections that might have visibility issues */
+.neuralkart-challenges-section,
+.neuralkart-products-section,
+.neuralkart-innovation-section,
+.neuralkart-services-section,
+.neuralkart-success-section {
+  position: relative;
+  z-index: 1;
+}
+
+.neuralkart-challenges-grid,
+.neuralkart-product-container,
+.neuralkart-innovation-content,
+.neuralkart-services-content,
+.neuralkart-success-content {
+  position: relative;
+  z-index: 2;
+}
+
+.neuralkart-challenge-description,
+.neuralkart-product-tagline,
+.neuralkart-feature-content p,
+.neuralkart-innovation-text p,
+.neuralkart-services-intro p,
+.neuralkart-success-details p,
+.case-study-point p {
+  opacity: 1;
+  visibility: visible;
 } 

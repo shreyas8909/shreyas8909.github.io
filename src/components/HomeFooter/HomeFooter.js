@@ -1,6 +1,6 @@
 import React from 'react';
 import NeuralkartLogo from '../Logo/NeuralkartLogo';
-import { FaEnvelope, FaArrowUp } from 'react-icons/fa';
+import { FaEnvelope, FaArrowUp, FaLinkedin } from 'react-icons/fa';
 import '../Footer/Footer.css';
 
 const HomeFooter = () => {
@@ -36,12 +36,16 @@ const HomeFooter = () => {
         <div className="footer-section brand-section">
           <NeuralkartLogo size="small" animated={false} textColor="#fff" networkColor="#14bef0" />
           <p className="footer-description">
-            Empowering businesses with intelligent solutions for customer engagement and analytics.
+            Bringing cutting-edge AI into the heart of the insurance industry for more efficient, accurate, and customer-centric solutions.
           </p>
           <div className="contact-info">
             <div className="contact-item">
               <FaEnvelope />
               <a href="mailto:info@neuralkart.com">info@neuralkart.com</a>
+            </div>
+            <div className="contact-item">
+              <FaLinkedin />
+              <a href="https://www.linkedin.com/company/neuralkart" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
         </div>
@@ -49,8 +53,11 @@ const HomeFooter = () => {
         <div className="footer-section quick-links">
           <h4>Quick Links</h4>
           <div className="links-grid">
-            <a href="#why-choose" onClick={(e) => { e.preventDefault(); scrollToSection('why-choose'); }}>Why Neuralkart</a>
-            <a href="#products" onClick={(e) => { e.preventDefault(); scrollToSection('products'); }}>Products</a>
+            <a href="#challenges" onClick={(e) => { e.preventDefault(); scrollToSection('challenges'); }}>The Challenge</a>
+            <a href="#products" onClick={(e) => { e.preventDefault(); scrollToSection('products'); }}>Our Products</a>
+            <a href="#innovation" onClick={(e) => { e.preventDefault(); scrollToSection('innovation'); }}>Innovation</a>
+            <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Our Services</a>
+            <a href="#success" onClick={(e) => { e.preventDefault(); scrollToSection('success'); }}>Client Success</a>
             <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About Us</a>
             <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
           </div>
@@ -58,7 +65,12 @@ const HomeFooter = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {currentYear} NeuralKart. All rights reserved.</p>
+        <p>&copy; {currentYear} Neuralkart. All rights reserved.</p>
+        <div className="footer-legal-links">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <span className="separator">|</span>
+          <a href="/terms-of-service">Terms of Service</a>
+        </div>
       </div>
     </footer>
   );
