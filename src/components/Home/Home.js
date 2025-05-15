@@ -10,6 +10,7 @@ import ChatbotLogo from '../Logo/ChatbotLogo';
 import VMSLogo from '../Logo/VMSLogo';
 import './Home.css';
 import Contact from '../Contact/Contact';
+import insuranceImage from '../../assets/image.png';
 
 const ChallengeSection = () => {
   const challenges = [
@@ -280,7 +281,7 @@ const ProductsSection = () => {
                     position: 'relative',
                     zIndex: 3,
                     lineHeight: '1.6'
-                  }}>Automatically extracts and analyzes critical clinical insights from diverse diagnostic documents.</p>
+                  }}>Automatically extracts and analyzes critical clinical insights from diverse diagnostic documents and facial analysis.</p>
                 </div>
               </div>
               <div style={{
@@ -985,7 +986,7 @@ const InnovationSection = () => {
               </div>
             </div>
             
-            <div style={{
+            {/* <div style={{
               marginTop: '40px',
               display: 'flex',
               justifyContent: 'center'
@@ -1008,7 +1009,7 @@ const InnovationSection = () => {
                 <span>Explore our research</span>
                 <FaArrowRight style={{ fontSize: '0.9rem' }} />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -1729,7 +1730,7 @@ const Hero = () => {
             letterSpacing: '0.5px',
             border: '1px solid rgba(20, 190, 240, 0.2)',
             boxShadow: '0 3px 10px rgba(20, 190, 240, 0.08)'
-          }}>INSURTECH INNOVATION</span>
+          }}>INTELLIGENT INSURANCE, AUTOMATED</span>
           
           <h1 style={{ 
             fontSize: window.innerWidth <= 768 ? '2.8rem' : '3.8rem', 
@@ -1742,7 +1743,7 @@ const Hero = () => {
             textShadow: '0 1px 2px rgba(0,0,0,0.05)'
           }}>
             <span style={{ display: 'block' }}>
-              Transforming Insurance
+            AI-Powered Underwriting & Claims
             </span>
             <span style={{
               background: 'linear-gradient(45deg, #14bef0, #28328c)',
@@ -1752,7 +1753,7 @@ const Hero = () => {
               position: 'relative',
               zIndex: 3
             }}>
-              with AI Excellence
+              {/* Streamline Underwriting, Automate Claims */}
             </span>
           </h1>
           
@@ -1765,7 +1766,7 @@ const Hero = () => {
             zIndex: 3,
             maxWidth: '600px'
           }}>
-            Advanced AI solutions streamlining insurance processes. Our powerful technology delivers precision, efficiency, and innovation to insurers and TPA's tackling complex challenges.
+            We're building advanced AI tools to automate and improve insurance underwriting and claims, starting with transforming medical underwriting.
           </p>
           
           <div style={{ 
@@ -1794,7 +1795,7 @@ const Hero = () => {
               <FaArrowRight style={{ fontSize: '0.9rem' }} />
             </div>
             
-            <div style={{
+            {/* <div style={{
               background: 'transparent',
               padding: '15px 35px',
               borderRadius: '50px',
@@ -1809,9 +1810,9 @@ const Hero = () => {
               gap: '10px',
               boxShadow: '0 5px 15px rgba(20, 190, 240, 0.1)'
             }}>
-              <span>Learn More</span>
+              <span>Discover Our Solutions</span>
               <FaChevronDown style={{ fontSize: '0.9rem' }} />
-            </div>
+            </div> */}
           </div>
           
           <div style={{ 
@@ -1844,16 +1845,6 @@ const Hero = () => {
                   style={{ height: '30px' }}
                 />
               </div>
-              
-              {/* <div style={{ 
-                fontSize: '1.1rem', 
-                fontWeight: '600', 
-                color: '#28328c', 
-                opacity: 0.75,
-                filter: 'grayscale(0.5)' 
-              }}>
-                Leading Insurers
-              </div> */}
             </div>
           </div>
         </div>
@@ -1879,184 +1870,22 @@ const Hero = () => {
             alignItems: 'center',
             border: '1px solid rgba(255, 255, 255, 0.1)'
           }}>
-            {/* Grid pattern background */}
-            <div style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background: 'url("data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'gridPattern\' width=\'20\' height=\'20\' patternUnits=\'userSpaceOnUse\'%3E%3Crect width=\'20\' height=\'20\' fill=\'none\'/%3E%3Cpath d=\'M 20 0 L 0 0 0 20\' fill=\'none\' stroke=\'rgba(255, 255, 255, 0.12)\' stroke-width=\'1\'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'url(%23gridPattern)\' /%3E%3C/svg%3E")',
-              opacity: 0.4,
-              zIndex: 1
-            }}></div>
-            
-            <div style={{
-              position: 'relative',
-              zIndex: 2,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              width: '80%'
-            }}>
-              <div style={{
-                width: '150px',
-                height: '150px',
-                backgroundColor: 'rgba(255, 255, 255, 0.15)',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '30px',
-                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.25)',
-                border: '4px solid rgba(255, 255, 255, 0.25)',
-                animation: 'pulse 4s infinite ease-in-out'
-              }}>
-                <FaRobot style={{ 
-                  fontSize: '80px', 
-                  color: 'white',
-                  filter: 'drop-shadow(0 5px 10px rgba(0,0,0,0.2))'
-                }} />
-              </div>
-              
-              <h2 style={{
-                color: 'white',
-                fontSize: '2.6rem',
-                fontWeight: '700',
-                marginBottom: '25px',
-                textAlign: 'center',
-                lineHeight: '1.2',
-                filter: 'drop-shadow(0 2px 5px rgba(0,0,0,0.2))'
-              }}>
-                AI Copilot for Insurance
-              </h2>
-              
-              <p style={{
-                color: 'rgba(255, 255, 255, 0.9)',
-                fontSize: '1.2rem',
-                textAlign: 'center',
-                lineHeight: '1.6',
-                marginBottom: '30px'
-              }}>
-                Our flagship solution processes insurance documents with unmatched precision and efficiency
-              </p>
-              
-              <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                marginTop: '20px'
-              }}>
-                {/* <div style={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.15)',
-                  borderRadius: '50px',
-                  padding: '12px 30px',
-                  color: 'white',
-                  fontSize: '1rem',
-                  fontWeight: '600',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  border: '1px solid rgba(255, 255, 255, 0.3)',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)'
-                }}>
-                  <span>Explore Features</span>
-                  <FaArrowRight style={{ fontSize: '0.8rem' }} />
-                </div> */}
-              </div>
-              
-              {/* Floating document elements */}
-              <div style={{
-                position: 'absolute',
-                width: '80px',
-                height: '100px',
-                backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                borderRadius: '8px',
-                top: '15%',
-                left: '10%',
-                boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
-                transform: 'rotate(-10deg)',
-                zIndex: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                padding: '10px',
-                justifyContent: 'center',
-                alignItems: 'center',
-                animation: 'float 8s infinite ease-in-out'
-              }}>
-                <div style={{ 
-                  width: '50px', 
-                  height: '6px', 
-                  backgroundColor: '#14bef0', 
-                  marginBottom: '10px',
-                  borderRadius: '3px'
-                }}></div>
-                <div style={{ 
-                  width: '40px', 
-                  height: '6px', 
-                  backgroundColor: '#14bef0',
-                  opacity: 0.7,
-                  marginBottom: '10px',
-                  borderRadius: '3px'
-                }}></div>
-                <div style={{ 
-                  width: '30px', 
-                  height: '6px', 
-                  backgroundColor: '#14bef0',
-                  opacity: 0.4,
-                  borderRadius: '3px'
-                }}></div>
-              </div>
-              
-              <div style={{
-                position: 'absolute',
-                width: '80px',
-                height: '100px',
-                backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                borderRadius: '8px',
-                bottom: '15%',
-                right: '10%',
-                boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
-                transform: 'rotate(10deg)',
-                zIndex: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                padding: '10px',
-                justifyContent: 'center',
-                alignItems: 'center',
-                animation: 'float 7s infinite ease-in-out reverse'
-              }}>
-                <div style={{ 
-                  width: '50px', 
-                  height: '6px', 
-                  backgroundColor: '#28328c', 
-                  marginBottom: '10px',
-                  borderRadius: '3px'
-                }}></div>
-                <div style={{ 
-                  width: '40px', 
-                  height: '6px', 
-                  backgroundColor: '#28328c',
-                  opacity: 0.7,
-                  marginBottom: '10px',
-                  borderRadius: '3px'
-                }}></div>
-                <div style={{ 
-                  width: '30px', 
-                  height: '6px', 
-                  backgroundColor: '#28328c',
-                  opacity: 0.4,
-                  borderRadius: '3px'
-                }}></div>
-              </div>
-            </div>
+            {/* Replace with the provided image */}
+            <img 
+              src={insuranceImage} 
+              alt="AI Copilot for Insurance" 
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover'
+              }}
+            />
           </div>
           
-          {/* Stats cards beneath hero image */}
+          {/* Stats cards beneath hero image - Replace with new message */}
           <div style={{ 
             display: 'flex', 
-            justifyContent: 'space-between',
+            justifyContent: 'center',
             marginTop: '30px',
             position: 'relative',
             zIndex: 3
@@ -2065,57 +1894,39 @@ const Hero = () => {
               backgroundColor: 'white',
               borderRadius: '16px',
               boxShadow: '0 15px 30px rgba(0, 0, 0, 0.1)',
-              padding: '20px',
-              flex: '1',
-              marginRight: '15px',
-              textAlign: 'center',
+              padding: '25px 30px',
+              width: '100%',
               border: '1px solid rgba(20, 190, 240, 0.1)',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(240,249,255,1) 100%)'
             }}>
-              <h3 style={{
-                fontSize: '2.2rem',
+              <div style={{
                 display: 'flex',
-                justifyContent: 'center',
-                fontWeight: '700',
-                margin: '0 0 5px 0',
-                background: 'linear-gradient(45deg, #14bef0, #14bef0)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>98%</h3>
-              <p style={{
-                fontSize: '0.9rem',
-                color: '#666',
-                margin: 0
-              }}>Accuracy Rate</p>
-            </div>
-            
-            <div style={{
-              backgroundColor: 'white',
-              borderRadius: '16px',
-              boxShadow: '0 15px 30px rgba(0, 0, 0, 0.1)',
-              padding: '20px',
-              flex: '1',
-              textAlign: 'center',
-              border: '1px solid rgba(40, 50, 140, 0.1)',
-              transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-            }}>
-              <h3 style={{
-                fontSize: '2.2rem',
-                fontWeight: '700',
-                display: 'flex',
-                justifyContent: 'center',
-                margin: '0 0 5px 0',
-                background: 'linear-gradient(45deg, #28328c, #28328c)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>70%</h3>
-              <p style={{
-                fontSize: '0.9rem',
-                color: '#666',
-                margin: 0
-              }}>Time Saved</p>
+                alignItems: 'center',
+                gap: '15px'
+              }}>
+                <span style={{
+                  fontSize: '4rem',
+                  fontWeight: '800',
+                  color: '#14bef0',
+                  lineHeight: '1',
+                  textShadow: '0px 2px 3px rgba(0,0,0,0.1)'
+                }}>80%</span>
+                <h3 style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  margin: '0',
+                  color: '#28328c',
+                  lineHeight: '1.3',
+                  maxWidth: '280px',
+                  textAlign: 'left'
+                }}>
+                  reduction in Medical Underwriting effort using our AI
+                </h3>
+              </div>
             </div>
           </div>
         </div>
@@ -2209,7 +2020,7 @@ const Home = () => {
       <ProductsSection />
       <InnovationSection />
       <ServicesSection />
-      <ClientSuccessSection />
+      {/* <ClientSuccessSection /> */}
       <AboutSection />
       <Contact />
       <HomeFooter />
