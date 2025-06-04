@@ -1716,7 +1716,7 @@ const Hero = () => {
           padding: '40px',
           position: 'relative', 
           zIndex: 3,
-          order: window.innerWidth <= 992 ? 2 : 1
+          order: window.innerWidth <= 992 ? 1 : 1
         }}>
           <span style={{
             display: 'inline-block',
@@ -1854,7 +1854,7 @@ const Hero = () => {
           position: 'relative',
           zIndex: 2,
           marginBottom: window.innerWidth <= 992 ? '30px' : '0',
-          order: window.innerWidth <= 992 ? 1 : 2,
+          order: window.innerWidth <= 992 ? 2 : 2,
           padding: '40px'
         }}>
           <div style={{
