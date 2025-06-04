@@ -2019,7 +2019,7 @@ const Home = () => {
       <ChallengeSection />
       <ProductsSection />
       <InnovationSection />
-      <ServicesSection />
+      {/* <ServicesSection /> */}
       {/* <ClientSuccessSection /> */}
       <AboutSection />
       <Contact />

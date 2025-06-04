@@ -42,7 +42,7 @@ const Contact = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="contact-header">
-          <h2>Let's Build the Future of Insurance Together</h2>
+          <h2>Building Tomorrow’s Insurance Industry—Powered by AI, Driven by Us</h2>
         </div>
         
         <motion.div 
