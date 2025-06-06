@@ -1665,9 +1665,9 @@ const AboutSection = () => {
             gap: '15px'
           }}>
             <img 
-              src={require('../../assets/iso_certification/iso_certification_logo.png')} 
-              alt="ISO 9001 Certified"
-              style={{ height: '45px' }}
+              src={require('../../assets/iso_certification/ISO_badge.webp')} 
+              alt="ISO/IEC 27001 Certified"
+              style={{ height: '65px' }}
             />
             <div style={{
               textAlign: 'left'
@@ -1677,12 +1677,12 @@ const AboutSection = () => {
                 fontWeight: '700',
                 color: '#28328c',
                 marginBottom: '5px'
-              }}>ISO 9001:2015 Certified</h3>
+              }}>ISO/IEC 27001:2022 Certified</h3>
               <p style={{
                 fontSize: '0.9rem',
                 color: '#666',
                 margin: 0
-              }}>Quality Management System</p>
+              }}>Information Security Management System</p>
             </div>
           </div>
           
@@ -1698,7 +1698,7 @@ const AboutSection = () => {
               margin: 0,
               lineHeight: '1.6'
             }}>
-              Our ISO 9001:2015 certification demonstrates our commitment to consistent quality, customer satisfaction, and continuous improvement in all our AI solutions and services.
+              Our ISO/IEC 27001:2022 certification demonstrates our commitment to information security, data protection, and risk management in all our AI solutions and services.
             </p>
           </div>
         </div>
@@ -1918,16 +1918,16 @@ const Hero = () => {
                   gap: '10px'
                 }}>
                   <img 
-                    src={require('../../assets/iso_certification/iso_certification_logo.png')} 
-                    alt="ISO 9001 Certified"
-                    style={{ height: '30px' }}
+                    src={require('../../assets/iso_certification/ISO_badge.webp')} 
+                    alt="ISO/IEC 27001 Certified"
+                    style={{ height: '40px' }}
                   />
                   <span style={{ 
-                    fontSize: '0.85rem', 
+                    fontSize: '0.9rem', 
                     fontWeight: '600',
                     color: '#28328c'
                   }}>
-                    ISO 9001:2015 Certified
+                    ISO/IEC 27001:2022
                   </span>
                 </div>
               </div>
