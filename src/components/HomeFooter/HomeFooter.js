@@ -48,6 +48,29 @@ const HomeFooter = () => {
               <a href="https://www.linkedin.com/company/neuralkart" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
+          
+          <div className="iso-certification" style={{
+            marginTop: '15px',
+            display: 'flex',
+            alignItems: 'center',
+            background: 'rgba(255, 255, 255, 0.1)',
+            padding: '8px 12px',
+            borderRadius: '8px',
+            maxWidth: 'fit-content'
+          }}>
+            <img 
+              src={require('../../assets/iso_certification/iso_certification_logo.png')} 
+              alt="ISO 9001 Certified"
+              style={{ height: '28px', marginRight: '10px' }}
+            />
+            <span style={{ 
+              fontSize: '0.85rem', 
+              fontWeight: '500',
+              color: '#fff'
+            }}>
+              ISO 9001:2015 Certified
+            </span>
+          </div>
         </div>
 
         <div className="footer-section quick-links">

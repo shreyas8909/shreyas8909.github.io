@@ -1643,9 +1643,65 @@ const AboutSection = () => {
         <p style={{ marginBottom: '15px', lineHeight: '1.8', color: '#444', fontSize: '1.1rem' }}>
           Neuralkart was founded with the vision to bring cutting-edge AI into the heart of the insurance industry. We are a team of passionate technologists, data scientists, and insurance domain enthusiasts committed to building solutions that are not only intelligent but also practical and impactful.
         </p>
-        <p style={{ lineHeight: '1.8', color: '#444', fontSize: '1.1rem' }}>
+        <p style={{ lineHeight: '1.8', color: '#444', fontSize: '1.1rem', marginBottom: '25px' }}>
           Our focus is on creating a future where insurance is more efficient, accurate, and customer-centric through the power of artificial intelligence.
         </p>
+        
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '20px',
+          background: 'linear-gradient(to right, rgba(240,249,255,1) 0%, rgba(255,255,255,1) 100%)',
+          padding: '20px',
+          borderRadius: '12px',
+          border: '1px solid rgba(20, 190, 240, 0.2)',
+          marginTop: '30px',
+          flexDirection: window.innerWidth <= 768 ? 'column' : 'row'
+        }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '15px'
+          }}>
+            <img 
+              src={require('../../assets/iso_certification/iso_certification_logo.png')} 
+              alt="ISO 9001 Certified"
+              style={{ height: '45px' }}
+            />
+            <div style={{
+              textAlign: 'left'
+            }}>
+              <h3 style={{
+                fontSize: '1.2rem',
+                fontWeight: '700',
+                color: '#28328c',
+                marginBottom: '5px'
+              }}>ISO 9001:2015 Certified</h3>
+              <p style={{
+                fontSize: '0.9rem',
+                color: '#666',
+                margin: 0
+              }}>Quality Management System</p>
+            </div>
+          </div>
+          
+          <div style={{
+            flex: '1',
+            textAlign: window.innerWidth <= 768 ? 'center' : 'left',
+            borderLeft: window.innerWidth <= 768 ? 'none' : '1px solid rgba(20, 190, 240, 0.3)',
+            paddingLeft: window.innerWidth <= 768 ? '0' : '20px'
+          }}>
+            <p style={{
+              fontSize: '0.95rem',
+              color: '#555',
+              margin: 0,
+              lineHeight: '1.6'
+            }}>
+              Our ISO 9001:2015 certification demonstrates our commitment to consistent quality, customer satisfaction, and continuous improvement in all our AI solutions and services.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -1844,6 +1900,36 @@ const Hero = () => {
                   alt="Cholamandalam MS Logo"
                   style={{ height: '30px' }}
                 />
+              </div>
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                opacity: 0.8,
+                transition: 'opacity 0.3s ease',
+                background: 'rgba(255, 255, 255, 0.9)',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.05)'
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
+                }}>
+                  <img 
+                    src={require('../../assets/iso_certification/iso_certification_logo.png')} 
+                    alt="ISO 9001 Certified"
+                    style={{ height: '30px' }}
+                  />
+                  <span style={{ 
+                    fontSize: '0.85rem', 
+                    fontWeight: '600',
+                    color: '#28328c'
+                  }}>
+                    ISO 9001:2015 Certified
+                  </span>
+                </div>
               </div>
             </div>
           </div>
