@@ -61,15 +61,15 @@ const HomeFooter = () => {
             <img 
               src={require('../../assets/iso_certification/ISO_badge.webp')} 
               alt="ISO/IEC 27001 Certified"
-              style={{ height: '40px', marginRight: '10px' }}
+              style={{ height: '80px', marginRight: '10px' }}
             />
-            <span style={{ 
+            {/* <span style={{ 
               fontSize: '0.9rem', 
               fontWeight: '600',
               color: '#fff'
             }}>
               ISO/IEC 27001:2022
-            </span>
+            </span> */}
           </div>
         </div>
 

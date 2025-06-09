@@ -1667,7 +1667,7 @@ const AboutSection = () => {
             <img 
               src={require('../../assets/iso_certification/ISO_badge.webp')} 
               alt="ISO/IEC 27001 Certified"
-              style={{ height: '65px' }}
+              style={{ height: '80px' }}
             />
             <div style={{
               textAlign: 'left'
@@ -1698,7 +1698,7 @@ const AboutSection = () => {
               margin: 0,
               lineHeight: '1.6'
             }}>
-              Our ISO/IEC 27001:2022 certification demonstrates our commitment to information security, data protection, and risk management in all our AI solutions and services.
+              Our ISO/IEC 27001:2022 certification demonstrates our commitment to information security, data protection, and risk management in all our AI solutions.
             </p>
           </div>
         </div>
@@ -1901,7 +1901,7 @@ const Hero = () => {
                   style={{ height: '30px' }}
                 />
               </div>
-              <div style={{
+              {/* <div style={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -1920,7 +1920,7 @@ const Hero = () => {
                   <img 
                     src={require('../../assets/iso_certification/ISO_badge.webp')} 
                     alt="ISO/IEC 27001 Certified"
-                    style={{ height: '40px' }}
+                    style={{ height: '80px' }}
                   />
                   <span style={{ 
                     fontSize: '0.9rem', 
@@ -1930,7 +1930,7 @@ const Hero = () => {
                     ISO/IEC 27001:2022
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
