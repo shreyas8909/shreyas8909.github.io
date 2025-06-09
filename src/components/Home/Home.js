@@ -32,10 +32,10 @@ const ChallengeSection = () => {
   ];
 
   return (
-    <section id="challenges" style={{ padding: '100px 20px', backgroundColor: '#f8f9fa', position: 'relative', zIndex: 2 }}>
-      <div style={{ textAlign: 'center', marginBottom: '50px', position: 'relative', zIndex: 3 }}>
+    <section id="challenges" style={{ padding: window.innerWidth <= 480 ? '70px 15px' : '100px 20px', backgroundColor: '#f8f9fa', position: 'relative', zIndex: 2 }}>
+      <div style={{ textAlign: 'center', marginBottom: window.innerWidth <= 480 ? '35px' : '50px', position: 'relative', zIndex: 3 }}>
         <h2 style={{ 
-          fontSize: '2.8rem', 
+          fontSize: window.innerWidth <= 480 ? '2.2rem' : '2.8rem', 
           color: '#333', 
           marginBottom: '1rem',
           display: 'inline-block',
@@ -51,8 +51,8 @@ const ChallengeSection = () => {
       </div>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-        gap: '30px',
+        gridTemplateColumns: window.innerWidth <= 480 ? '1fr' : 'repeat(auto-fit, minmax(350px, 1fr))',
+        gap: window.innerWidth <= 480 ? '20px' : '30px',
         maxWidth: '1200px',
         margin: '0 auto',
         position: 'relative',
@@ -63,7 +63,7 @@ const ChallengeSection = () => {
             key={index}
             style={{
               backgroundColor: 'rgba(255, 255, 255, 0.95)',
-              padding: '2rem',
+              padding: window.innerWidth <= 480 ? '1.5rem' : '2rem',
               borderRadius: '16px',
               boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)',
               position: 'relative',
@@ -72,23 +72,23 @@ const ChallengeSection = () => {
             }}
           >
             <div style={{
-              width: '70px',
-              height: '70px',
+              width: window.innerWidth <= 480 ? '60px' : '70px',
+              height: window.innerWidth <= 480 ? '60px' : '70px',
               borderRadius: '16px',
               background: 'linear-gradient(45deg, #14bef0, #28328c)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '2rem',
+              fontSize: window.innerWidth <= 480 ? '1.7rem' : '2rem',
               color: 'white',
-              marginBottom: '1.5rem'
+              marginBottom: window.innerWidth <= 480 ? '1.2rem' : '1.5rem'
             }}>
               {challenge.icon}
             </div>
             <h3 style={{
-              fontSize: '1.4rem',
+              fontSize: window.innerWidth <= 480 ? '1.2rem' : '1.4rem',
               color: '#28328c',
-              marginBottom: '1rem',
+              marginBottom: window.innerWidth <= 480 ? '0.8rem' : '1rem',
               fontWeight: '600'
             }}>
               {challenge.title}
@@ -96,8 +96,8 @@ const ChallengeSection = () => {
             <p style={{
               color: '#444',
               lineHeight: '1.6',
-              marginBottom: '1.5rem',
-              fontSize: '1rem'
+              marginBottom: window.innerWidth <= 480 ? '1rem' : '1.5rem',
+              fontSize: window.innerWidth <= 480 ? '0.95rem' : '1rem'
             }}>
               {challenge.description}
             </p>
@@ -111,7 +111,7 @@ const ChallengeSection = () => {
 const ProductsSection = () => {
   return (
     <section id="products" style={{ 
-      padding: '120px 20px',
+      padding: window.innerWidth <= 480 ? '80px 15px' : '120px 20px',
       background: 'linear-gradient(135deg, #f5f9fc 0%, #ffffff 100%)',
       position: 'relative',
       zIndex: 2,
@@ -122,8 +122,8 @@ const ProductsSection = () => {
         position: 'absolute',
         top: '5%',
         left: '5%',
-        width: '300px',
-        height: '300px',
+        width: window.innerWidth <= 480 ? '200px' : '300px',
+        height: window.innerWidth <= 480 ? '200px' : '300px',
         borderRadius: '50%',
         background: 'radial-gradient(circle, rgba(20, 190, 240, 0.05) 0%, rgba(255, 255, 255, 0) 70%)',
         zIndex: 1
@@ -132,8 +132,8 @@ const ProductsSection = () => {
         position: 'absolute',
         bottom: '10%',
         right: '5%',
-        width: '400px',
-        height: '400px',
+        width: window.innerWidth <= 480 ? '250px' : '400px',
+        height: window.innerWidth <= 480 ? '250px' : '400px',
         borderRadius: '50%',
         background: 'radial-gradient(circle, rgba(40, 50, 140, 0.05) 0%, rgba(255, 255, 255, 0) 70%)',
         zIndex: 1
@@ -141,7 +141,7 @@ const ProductsSection = () => {
       
       <div style={{ 
         textAlign: 'center', 
-        marginBottom: '80px', 
+        marginBottom: window.innerWidth <= 480 ? '50px' : '80px', 
         position: 'relative', 
         zIndex: 3 
       }}>
@@ -149,13 +149,13 @@ const ProductsSection = () => {
           fontWeight: 500,
           color: '#14bef0',
           display: 'block',
-          marginBottom: '15px',
-          fontSize: '1.2rem',
+          marginBottom: window.innerWidth <= 480 ? '10px' : '15px',
+          fontSize: window.innerWidth <= 480 ? '1rem' : '1.2rem',
           letterSpacing: '1px',
           textTransform: 'uppercase'
         }}>Our Solutions</span>
         <h2 style={{ 
-          fontSize: '3.2rem', 
+          fontSize: window.innerWidth <= 480 ? '2.3rem' : '3.2rem', 
           fontWeight: '800',
           margin: '0 auto 25px',
           maxWidth: '800px',
@@ -172,14 +172,14 @@ const ProductsSection = () => {
           Our AI Product Suite: Precision, Speed, and Insight
         </h2>
         <div style={{
-          width: '80px',
+          width: window.innerWidth <= 480 ? '60px' : '80px',
           height: '4px',
           background: 'linear-gradient(to right, #14bef0, #28328c)',
           margin: '0 auto 25px',
           borderRadius: '4px'
         }}></div>
         <p style={{
-          fontSize: '1.2rem',
+          fontSize: window.innerWidth <= 480 ? '1.05rem' : '1.2rem',
           color: '#666',
           maxWidth: '700px',
           margin: '0 auto',
@@ -209,26 +209,26 @@ const ProductsSection = () => {
           border: '1px solid rgba(20, 190, 240, 0.1)'
         }}>
           <div style={{
-            padding: '60px 50px',
+            padding: window.innerWidth <= 480 ? '30px 20px' : '60px 50px',
             flex: '1',
             position: 'relative',
             zIndex: 3
           }}>
-            <div style={{ marginBottom: '40px' }}>
+            <div style={{ marginBottom: window.innerWidth <= 480 ? '25px' : '40px' }}>
               <span style={{
                 background: 'linear-gradient(45deg, #14bef0, #28328c)',
                 color: 'white',
-                padding: '8px 20px',
+                padding: window.innerWidth <= 480 ? '6px 15px' : '8px 20px',
                 borderRadius: '30px',
-                fontSize: '0.95rem',
+                fontSize: window.innerWidth <= 480 ? '0.85rem' : '0.95rem',
                 fontWeight: '600',
                 display: 'inline-block',
-                marginBottom: '20px',
+                marginBottom: window.innerWidth <= 480 ? '15px' : '20px',
                 boxShadow: '0 8px 15px rgba(20, 190, 240, 0.2)'
               }}>Flagship Product</span>
               <h3 style={{
-                fontSize: '2.4rem',
-                marginBottom: '15px',
+                fontSize: window.innerWidth <= 480 ? '1.8rem' : '2.4rem',
+                marginBottom: window.innerWidth <= 480 ? '10px' : '15px',
                 color: '#28328c',
                 fontWeight: '700',
                 position: 'relative',
@@ -236,10 +236,10 @@ const ProductsSection = () => {
                 lineHeight: '1.2'
               }}>AI-Driven Medical Underwriting Automation</h3>
               <p style={{
-                fontSize: '1.25rem',
+                fontSize: window.innerWidth <= 480 ? '1.1rem' : '1.25rem',
                 color: '#14bef0',
                 fontWeight: '500',
-                marginBottom: '30px',
+                marginBottom: window.innerWidth <= 480 ? '20px' : '30px',
                 position: 'relative',
                 zIndex: 3
               }}>Streamlining Medical Underwriting. Enhancing Accuracy.</p>
@@ -247,36 +247,36 @@ const ProductsSection = () => {
             <div>
               <div style={{
                 display: 'flex',
-                marginBottom: '25px',
+                marginBottom: window.innerWidth <= 480 ? '20px' : '25px',
                 position: 'relative',
                 zIndex: 3
               }}>
                 <div style={{
-                  width: '50px',
-                  height: '50px',
+                  width: window.innerWidth <= 480 ? '40px' : '50px',
+                  height: window.innerWidth <= 480 ? '40px' : '50px',
                   borderRadius: '15px',
                   backgroundColor: 'rgba(20, 190, 240, 0.1)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.5rem',
+                  fontSize: window.innerWidth <= 480 ? '1.2rem' : '1.5rem',
                   color: '#14bef0',
-                  marginRight: '20px',
+                  marginRight: window.innerWidth <= 480 ? '15px' : '20px',
                   flexShrink: 0
                 }}>
                   <FaSearch />
                 </div>
                 <div>
                   <h4 style={{
-                    fontSize: '1.3rem',
-                    marginBottom: '8px',
+                    fontSize: window.innerWidth <= 480 ? '1.1rem' : '1.3rem',
+                    marginBottom: window.innerWidth <= 480 ? '5px' : '8px',
                     color: '#333',
                     fontWeight: '600',
                     position: 'relative',
                     zIndex: 3
                   }}>Clinical Insight Extraction</h4>
                   <p style={{
-                    fontSize: '1.05rem',
+                    fontSize: window.innerWidth <= 480 ? '0.95rem' : '1.05rem',
                     color: '#666',
                     position: 'relative',
                     zIndex: 3,
@@ -284,38 +284,39 @@ const ProductsSection = () => {
                   }}>Automatically extracts and analyzes critical clinical insights from diverse diagnostic documents and facial analysis.</p>
                 </div>
               </div>
+              
               <div style={{
                 display: 'flex',
-                marginBottom: '25px',
+                marginBottom: window.innerWidth <= 480 ? '20px' : '25px',
                 position: 'relative',
                 zIndex: 3
               }}>
                 <div style={{
-                  width: '50px',
-                  height: '50px',
+                  width: window.innerWidth <= 480 ? '40px' : '50px',
+                  height: window.innerWidth <= 480 ? '40px' : '50px',
                   borderRadius: '15px',
                   backgroundColor: 'rgba(20, 190, 240, 0.1)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.5rem',
+                  fontSize: window.innerWidth <= 480 ? '1.2rem' : '1.5rem',
                   color: '#14bef0',
-                  marginRight: '20px',
+                  marginRight: window.innerWidth <= 480 ? '15px' : '20px',
                   flexShrink: 0
                 }}>
                   <FaCheckCircle />
                 </div>
                 <div>
                   <h4 style={{
-                    fontSize: '1.3rem',
-                    marginBottom: '8px',
+                    fontSize: window.innerWidth <= 480 ? '1.1rem' : '1.3rem',
+                    marginBottom: window.innerWidth <= 480 ? '5px' : '8px',
                     color: '#333',
                     fontWeight: '600',
                     position: 'relative',
                     zIndex: 3
                   }}>Guideline Compliance</h4>
                   <p style={{
-                    fontSize: '1.05rem',
+                    fontSize: window.innerWidth <= 480 ? '0.95rem' : '1.05rem',
                     color: '#666',
                     position: 'relative',
                     zIndex: 3,
@@ -323,38 +324,39 @@ const ProductsSection = () => {
                   }}>Intelligently checks data against underwriting guidelines, instantly flagging discrepancies and risks.</p>
                 </div>
               </div>
+              
               <div style={{
                 display: 'flex',
-                marginBottom: '25px',
+                marginBottom: window.innerWidth <= 480 ? '20px' : '25px',
                 position: 'relative',
                 zIndex: 3
               }}>
                 <div style={{
-                  width: '50px',
-                  height: '50px',
+                  width: window.innerWidth <= 480 ? '40px' : '50px',
+                  height: window.innerWidth <= 480 ? '40px' : '50px',
                   borderRadius: '15px',
                   backgroundColor: 'rgba(20, 190, 240, 0.1)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.5rem',
+                  fontSize: window.innerWidth <= 480 ? '1.2rem' : '1.5rem',
                   color: '#14bef0',
-                  marginRight: '20px',
+                  marginRight: window.innerWidth <= 480 ? '15px' : '20px',
                   flexShrink: 0
                 }}>
                   <FaClock />
                 </div>
                 <div>
                   <h4 style={{
-                    fontSize: '1.3rem',
-                    marginBottom: '8px',
+                    fontSize: window.innerWidth <= 480 ? '1.1rem' : '1.3rem',
+                    marginBottom: window.innerWidth <= 480 ? '5px' : '8px',
                     color: '#333',
                     fontWeight: '600',
                     position: 'relative',
                     zIndex: 3
                   }}>Reduced Manual Review</h4>
                   <p style={{
-                    fontSize: '1.05rem',
+                    fontSize: window.innerWidth <= 480 ? '0.95rem' : '1.05rem',
                     color: '#666',
                     position: 'relative',
                     zIndex: 3,
@@ -362,6 +364,7 @@ const ProductsSection = () => {
                   }}>Significantly cuts down manual review time, empowering underwriters to focus on complex cases.</p>
                 </div>
               </div>
+              
               <div style={{
                 display: 'flex',
                 marginBottom: '0',
@@ -369,31 +372,31 @@ const ProductsSection = () => {
                 zIndex: 3
               }}>
                 <div style={{
-                  width: '50px',
-                  height: '50px',
+                  width: window.innerWidth <= 480 ? '40px' : '50px',
+                  height: window.innerWidth <= 480 ? '40px' : '50px',
                   borderRadius: '15px',
                   backgroundColor: 'rgba(20, 190, 240, 0.1)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '1.5rem',
+                  fontSize: window.innerWidth <= 480 ? '1.2rem' : '1.5rem',
                   color: '#14bef0',
-                  marginRight: '20px',
+                  marginRight: window.innerWidth <= 480 ? '15px' : '20px',
                   flexShrink: 0
                 }}>
                   <FaChartLine />
                 </div>
                 <div>
                   <h4 style={{
-                    fontSize: '1.3rem',
-                    marginBottom: '8px',
+                    fontSize: window.innerWidth <= 480 ? '1.1rem' : '1.3rem',
+                    marginBottom: window.innerWidth <= 480 ? '5px' : '8px',
                     color: '#333',
                     fontWeight: '600',
                     position: 'relative',
                     zIndex: 3
                   }}>Improved Decision Accuracy</h4>
                   <p style={{
-                    fontSize: '1.05rem',
+                    fontSize: window.innerWidth <= 480 ? '0.95rem' : '1.05rem',
                     color: '#666',
                     position: 'relative',
                     zIndex: 3,
@@ -405,7 +408,7 @@ const ProductsSection = () => {
           </div>
           <div style={{
             flex: '1',
-            minHeight: window.innerWidth <= 768 ? '300px' : '500px',
+            minHeight: window.innerWidth <= 480 ? '220px' : window.innerWidth <= 768 ? '300px' : '500px',
             position: 'relative',
             zIndex: 2,
             order: window.innerWidth <= 1024 ? '-1' : '0',
@@ -440,7 +443,10 @@ const ProductsSection = () => {
                 color: 'white',
                 opacity: 0.9
               }}>
-                <FaRobot style={{ fontSize: '120px', filter: 'drop-shadow(0 10px 10px rgba(0,0,0,0.2))' }} />
+                <FaRobot style={{ 
+                  fontSize: window.innerWidth <= 480 ? '80px' : '120px', 
+                  filter: 'drop-shadow(0 10px 10px rgba(0,0,0,0.2))' 
+                }} />
               </div>
             </div>
           </div>
@@ -1716,7 +1722,7 @@ const Hero = () => {
       justifyContent: 'center',
       background: 'linear-gradient(135deg, #f8fbff 0%, #f1f8fd 100%)',
       position: 'relative',
-      padding: '120px 20px 80px',
+      padding: window.innerWidth <= 480 ? '100px 15px 60px' : '120px 20px 80px',
       overflow: 'hidden'
     }}>
       {/* Background decorative elements */}
@@ -1740,7 +1746,7 @@ const Hero = () => {
         opacity: 0.5,
         zIndex: 1
       }}>
-        {Array.from({ length: 25 }).map((_, index) => (
+        {Array.from({ length: window.innerWidth <= 480 ? 15 : 25 }).map((_, index) => (
           <div key={index} style={{
             position: 'absolute',
             left: `${Math.random() * 100}%`,
@@ -1769,7 +1775,7 @@ const Hero = () => {
       }}>
         <div style={{ 
           flex: '1',
-          padding: '40px',
+          padding: window.innerWidth <= 480 ? '20px 10px' : '40px',
           position: 'relative', 
           zIndex: 3,
           order: window.innerWidth <= 992 ? 1 : 1
@@ -1778,20 +1784,20 @@ const Hero = () => {
             display: 'inline-block',
             backgroundColor: 'rgba(20, 190, 240, 0.08)',
             color: '#14bef0',
-            padding: '8px 20px',
+            padding: window.innerWidth <= 480 ? '6px 15px' : '8px 20px',
             borderRadius: '30px',
-            fontSize: '0.95rem',
+            fontSize: window.innerWidth <= 480 ? '0.85rem' : '0.95rem',
             fontWeight: '600',
-            marginBottom: '25px',
+            marginBottom: window.innerWidth <= 480 ? '15px' : '25px',
             letterSpacing: '0.5px',
             border: '1px solid rgba(20, 190, 240, 0.2)',
             boxShadow: '0 3px 10px rgba(20, 190, 240, 0.08)'
           }}>INTELLIGENT INSURANCE, AUTOMATED</span>
           
           <h1 style={{ 
-            fontSize: window.innerWidth <= 768 ? '2.8rem' : '3.8rem', 
+            fontSize: window.innerWidth <= 480 ? '2.2rem' : window.innerWidth <= 768 ? '2.8rem' : '3.8rem', 
             fontWeight: '800', 
-            marginBottom: '30px',
+            marginBottom: window.innerWidth <= 480 ? '20px' : '30px',
             lineHeight: '1.2',
             color: '#28328c',
             position: 'relative',
@@ -1814,9 +1820,9 @@ const Hero = () => {
           </h1>
           
           <p style={{ 
-            fontSize: '1.25rem', 
+            fontSize: window.innerWidth <= 480 ? '1.1rem' : '1.25rem', 
             lineHeight: '1.8', 
-            marginBottom: '40px', 
+            marginBottom: window.innerWidth <= 480 ? '25px' : '40px', 
             color: '#555',
             position: 'relative',
             zIndex: 3,
@@ -1827,19 +1833,19 @@ const Hero = () => {
           
           <div style={{ 
             display: 'flex',
-            gap: '20px',
+            gap: window.innerWidth <= 480 ? '15px' : '20px',
             flexWrap: 'wrap',
             position: 'relative', 
             zIndex: 3,
-            marginBottom: '50px'
+            marginBottom: window.innerWidth <= 480 ? '30px' : '50px'
           }}>
             <div style={{
               background: 'linear-gradient(45deg, #14bef0, #28328c)',
-              padding: '15px 35px',
+              padding: window.innerWidth <= 480 ? '12px 25px' : '15px 35px',
               borderRadius: '50px',
               color: 'white',
               fontWeight: '600',
-              fontSize: '1.1rem',
+              fontSize: window.innerWidth <= 480 ? '1rem' : '1.1rem',
               boxShadow: '0 12px 25px rgba(20, 190, 240, 0.3)',
               cursor: 'pointer',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -1850,39 +1856,22 @@ const Hero = () => {
               <span>Request Demo</span>
               <FaArrowRight style={{ fontSize: '0.9rem' }} />
             </div>
-            
-            {/* <div style={{
-              background: 'transparent',
-              padding: '15px 35px',
-              borderRadius: '50px',
-              color: '#28328c',
-              fontWeight: '600',
-              fontSize: '1.1rem',
-              cursor: 'pointer',
-              transition: 'background 0.3s ease, transform 0.3s ease',
-              border: '2px solid #14bef0',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-              boxShadow: '0 5px 15px rgba(20, 190, 240, 0.1)'
-            }}>
-              <span>Discover Our Solutions</span>
-              <FaChevronDown style={{ fontSize: '0.9rem' }} />
-            </div> */}
           </div>
           
           <div style={{ 
             display: 'flex',
             alignItems: 'center',
             justifyContent: window.innerWidth <= 768 ? 'center' : 'flex-start',
-            marginTop: '30px',
+            marginTop: window.innerWidth <= 480 ? '20px' : '30px',
             position: 'relative',
-            zIndex: 3
+            zIndex: 3,
+            flexDirection: window.innerWidth <= 480 ? 'column' : 'row',
+            gap: window.innerWidth <= 480 ? '15px' : '0'
           }}>
             <span style={{
-              fontSize: '0.9rem',
+              fontSize: window.innerWidth <= 480 ? '0.85rem' : '0.9rem',
               color: '#666',
-              marginRight: '20px',
+              marginRight: window.innerWidth <= 480 ? '0' : '20px',
               fontWeight: '500'
             }}>Trusted By:</span>
             <div style={{
@@ -1898,39 +1887,9 @@ const Hero = () => {
                 <img 
                   src="https://www.cholainsurance.com/o/chola-corporate-theme/images/logo.png" 
                   alt="Cholamandalam MS Logo"
-                  style={{ height: '30px' }}
+                  style={{ height: window.innerWidth <= 480 ? '25px' : '30px' }}
                 />
               </div>
-              {/* <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                opacity: 0.8,
-                transition: 'opacity 0.3s ease',
-                background: 'rgba(255, 255, 255, 0.9)',
-                padding: '8px 12px',
-                borderRadius: '8px',
-                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.05)'
-              }}>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px'
-                }}>
-                  <img 
-                    src={require('../../assets/iso_certification/ISO_badge.webp')} 
-                    alt="ISO/IEC 27001 Certified"
-                    style={{ height: '80px' }}
-                  />
-                  <span style={{ 
-                    fontSize: '0.9rem', 
-                    fontWeight: '600',
-                    color: '#28328c'
-                  }}>
-                    ISO/IEC 27001:2022
-                  </span>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
@@ -1941,11 +1900,11 @@ const Hero = () => {
           zIndex: 2,
           marginBottom: window.innerWidth <= 992 ? '30px' : '0',
           order: window.innerWidth <= 992 ? 2 : 2,
-          padding: '40px'
+          padding: window.innerWidth <= 480 ? '20px 10px' : '40px'
         }}>
           <div style={{
             width: '100%',
-            height: '500px',
+            height: window.innerWidth <= 480 ? '300px' : '500px',
             position: 'relative',
             borderRadius: '24px',
             overflow: 'hidden',
@@ -1972,7 +1931,7 @@ const Hero = () => {
           <div style={{ 
             display: 'flex', 
             justifyContent: 'center',
-            marginTop: '30px',
+            marginTop: window.innerWidth <= 480 ? '20px' : '30px',
             position: 'relative',
             zIndex: 3
           }}>
@@ -1980,7 +1939,7 @@ const Hero = () => {
               backgroundColor: 'white',
               borderRadius: '16px',
               boxShadow: '0 15px 30px rgba(0, 0, 0, 0.1)',
-              padding: '25px 30px',
+              padding: window.innerWidth <= 480 ? '15px 20px' : '25px 30px',
               width: '100%',
               border: '1px solid rgba(20, 190, 240, 0.1)',
               transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -1992,17 +1951,17 @@ const Hero = () => {
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '15px'
+                gap: window.innerWidth <= 480 ? '10px' : '15px'
               }}>
                 <span style={{
-                  fontSize: '4rem',
+                  fontSize: window.innerWidth <= 480 ? '3rem' : '4rem',
                   fontWeight: '800',
                   color: '#14bef0',
                   lineHeight: '1',
                   textShadow: '0px 2px 3px rgba(0,0,0,0.1)'
                 }}>80%</span>
                 <h3 style={{
-                  fontSize: '1.5rem',
+                  fontSize: window.innerWidth <= 480 ? '1.1rem' : '1.5rem',
                   fontWeight: '700',
                   margin: '0',
                   color: '#28328c',
@@ -2018,42 +1977,44 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Scroll down indicator */}
-      <div style={{
-        position: 'absolute',
-        bottom: '30px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        zIndex: 3,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        cursor: 'pointer'
-      }}>
-        <p style={{
-          fontSize: '0.9rem',
-          color: '#666',
-          marginBottom: '10px'
-        }}>Scroll down</p>
+      {/* Scroll down indicator - Hide on very small screens */}
+      {window.innerWidth > 480 && (
         <div style={{
-          width: '30px',
-          height: '50px',
-          border: '2px solid #14bef0',
-          borderRadius: '15px',
+          position: 'absolute',
+          bottom: '30px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 3,
           display: 'flex',
-          justifyContent: 'center',
-          padding: '5px 0'
+          flexDirection: 'column',
+          alignItems: 'center',
+          cursor: 'pointer'
         }}>
+          <p style={{
+            fontSize: '0.9rem',
+            color: '#666',
+            marginBottom: '10px'
+          }}>Scroll down</p>
           <div style={{
-            width: '6px',
-            height: '10px',
-            backgroundColor: '#14bef0',
-            borderRadius: '3px',
-            animation: 'scroll 2s infinite',
-            marginTop: '5px'
-          }}></div>
+            width: '30px',
+            height: '50px',
+            border: '2px solid #14bef0',
+            borderRadius: '15px',
+            display: 'flex',
+            justifyContent: 'center',
+            padding: '5px 0'
+          }}>
+            <div style={{
+              width: '6px',
+              height: '10px',
+              backgroundColor: '#14bef0',
+              borderRadius: '3px',
+              animation: 'scroll 2s infinite',
+              marginTop: '5px'
+            }}></div>
+          </div>
         </div>
-      </div>
+      )}
       
       <style>
         {`
