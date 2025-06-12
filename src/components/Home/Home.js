@@ -876,74 +876,26 @@ const ProductsSection = () => {
               zIndex: 2,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              padding: '40px 20px',
-              textAlign: 'center'
+              justifyContent: 'center'
             }}>
               {/* Decorative elements inside image area */}
               <div style={{
                 position: 'absolute',
-                top: '0',
-                left: '0',
-                right: '0',
-                bottom: '0',
-                background: 'url("data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'smallGrid\' width=\'10\' height=\'10\' patternUnits=\'userSpaceOnUse\'%3E%3Cpath d=\'M 10 0 L 0 0 0 10\' fill=\'none\' stroke=\'rgba(255, 255, 255, 0.1)\' stroke-width=\'0.5\'/%3E%3C/pattern%3E%3Cpattern id=\'grid\' width=\'50\' height=\'50\' patternUnits=\'userSpaceOnUse\'%3E%3Crect width=\'50\' height=\'50\' fill=\'url(%23smallGrid)\'/%3E%3Cpath d=\'M 50 0 L 0 0 0 50\' fill=\'none\' stroke=\'rgba(255, 255, 255, 0.15)\' stroke-width=\'1\'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'url(%23grid)\' /%3E%3C/svg%3E")',
-                opacity: 0.4
+                top: '10%',
+                left: '10%',
+                right: '10%',
+                bottom: '10%',
+                background: 'url("data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'smallGrid\' width=\'15\' height=\'15\' patternUnits=\'userSpaceOnUse\'%3E%3Ccircle cx=\'7.5\' cy=\'7.5\' r=\'1\' fill=\'rgba(255, 255, 255, 0.3)\'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'url(%23smallGrid)\' /%3E%3C/svg%3E")',
+                opacity: 0.6
               }}></div>
-              
               <div style={{
                 position: 'relative',
                 zIndex: 3,
-                width: '90%',
-                maxWidth: '450px'
+                fontSize: '3rem',
+                color: 'white',
+                opacity: 0.9
               }}>
-                <div style={{ marginBottom: '30px' }}>
-                  <FaQuoteLeft style={{ fontSize: '60px', color: 'rgba(255, 255, 255, 0.2)' }} />
-                </div>
-                
-                <p style={{ 
-                  fontSize: '1.5rem', 
-                  color: 'white', 
-                  fontWeight: '300',
-                  lineHeight: '1.8',
-                  fontStyle: 'italic',
-                  marginBottom: '40px'
-                }}>
-                  Neuralkart's AI solution has transformed our claims processing, enabling us to serve our customers faster while significantly reducing operational costs.
-                </p>
-                
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}>
-                  <div style={{
-                    width: '70px',
-                    height: '70px',
-                    borderRadius: '50%',
-                    backgroundColor: 'white',
-                    marginRight: '20px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)'
-                  }}>
-                    <FaUserTie style={{ fontSize: '30px', color: '#28328c' }} />
-                  </div>
-                  <div style={{ textAlign: 'left' }}>
-                    <h5 style={{ 
-                      color: 'white', 
-                      margin: '0 0 5px 0',
-                      fontSize: '1.1rem',
-                      fontWeight: '600'
-                    }}>Rajesh Kumar</h5>
-                    <p style={{ 
-                      color: 'rgba(255, 255, 255, 0.8)', 
-                      margin: 0,
-                      fontSize: '0.95rem'
-                    }}>CTO, Cholamandalam MS</p>
-                  </div>
-                </div>
+                <FaFileAlt style={{ fontSize: '120px', filter: 'drop-shadow(0 10px 10px rgba(0,0,0,0.2))' }} />
               </div>
             </div>
           </div>
