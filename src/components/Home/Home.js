@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import HomeNavbar from '../HomeNavbar/HomeNavbar';
 import HomeHero from '../HomeHero/HomeHero';
 import HomeFooter from '../HomeFooter/HomeFooter';
 import { motion } from 'framer-motion';
-import { FaRobot, FaChartLine, FaShieldAlt, FaCode, FaBrain, FaUserTie, FaHourglass, FaQuestionCircle, FaFileAlt, FaCheckCircle, FaSearch, FaClock, FaCreditCard, FaExclamationCircle, FaHandshake, FaUsers, FaLinkedin, FaLightbulb, FaDatabase, FaArrowRight, FaQuoteLeft, FaQuoteRight, FaChevronDown } from 'react-icons/fa';
+import { FaRobot, FaChartLine, FaShieldAlt, FaCode, FaBrain, FaUserTie, FaHourglass, FaQuestionCircle, FaFileAlt, FaCheckCircle, FaSearch, FaClock, FaCreditCard, FaExclamationCircle, FaHandshake, FaUsers, FaLinkedin, FaLightbulb, FaDatabase, FaArrowRight, FaQuoteLeft, FaQuoteRight, FaChevronDown, FaPlay, FaPause, FaExpand, FaVolumeUp, FaVolumeMute, FaStepBackward, FaStepForward } from 'react-icons/fa';
 import Logo from '../Logo/Logo';
 import DocAILogo from '../Logo/DocAILogo';
 import ChatbotLogo from '../Logo/ChatbotLogo';
@@ -11,6 +11,7 @@ import VMSLogo from '../Logo/VMSLogo';
 import './Home.css';
 import Contact from '../Contact/Contact';
 import insuranceImage from '../../assets/image.png';
+import ReactPlayer from 'react-player/lazy';
 
 const ChallengeSection = () => {
   const challenges = [
@@ -109,6 +110,93 @@ const ChallengeSection = () => {
 };
 
 const ProductsSection = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const playerRef = useRef(null);
+  const containerRef = useRef(null);
+  const progressBarRef = useRef(null);
+  
+  const toggleFullscreen = () => {
+    const container = containerRef.current;
+    
+    if (!document.fullscreenElement) {
+      if (container.requestFullscreen) {
+        container.requestFullscreen();
+      } else if (container.webkitRequestFullscreen) {
+        container.webkitRequestFullscreen();
+      } else if (container.msRequestFullscreen) {
+        container.msRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
+  };
+  
+  const toggleMute = (e) => {
+    e.stopPropagation();
+    setIsMuted(!isMuted);
+  };
+
+  const formatTime = (seconds) => {
+    if (isNaN(seconds)) return "0:00";
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  };
+  
+  const handleProgress = (state) => {
+    setProgress(state.played);
+    setCurrentTime(state.playedSeconds);
+  };
+  
+  const handleDuration = (duration) => {
+    setDuration(duration);
+  };
+  
+  const handleSeekMouseDown = (e) => {
+    e.stopPropagation();
+  };
+  
+  const handleSeekChange = (e) => {
+    e.stopPropagation();
+    const rect = progressBarRef.current.getBoundingClientRect();
+    const pos = (e.clientX - rect.left) / rect.width;
+    setProgress(pos);
+  };
+  
+  const handleSeekMouseUp = (e) => {
+    e.stopPropagation();
+    if (playerRef.current) {
+      playerRef.current.seekTo(progress);
+    }
+  };
+
+  const handleSkipForward = (e) => {
+    e.stopPropagation();
+    if (playerRef.current) {
+      const newTime = Math.min(currentTime + 10, duration);
+      playerRef.current.seekTo(newTime / duration);
+    }
+  };
+
+  const handleSkipBackward = (e) => {
+    e.stopPropagation();
+    if (playerRef.current) {
+      const newTime = Math.max(currentTime - 10, 0);
+      playerRef.current.seekTo(newTime / duration);
+    }
+  };
+  
   return (
     <section id="products" style={{ 
       padding: window.innerWidth <= 480 ? '80px 15px' : '120px 20px',
@@ -196,7 +284,7 @@ const ProductsSection = () => {
         position: 'relative',
         zIndex: 3 
       }}>
-        <div style={{
+        <div className="product-video-section" style={{
           display: 'flex',
           backgroundColor: 'rgba(255, 255, 255, 0.97)',
           borderRadius: '24px',
@@ -406,7 +494,8 @@ const ProductsSection = () => {
               </div>
             </div>
           </div>
-          <div style={{
+          
+          <div className="product-video-container" style={{
             flex: '1',
             minHeight: window.innerWidth <= 480 ? '220px' : window.innerWidth <= 768 ? '300px' : '500px',
             position: 'relative',
@@ -425,28 +514,130 @@ const ProductsSection = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
-            }}>
-              {/* Decorative elements inside image area */}
-              <div style={{
-                position: 'absolute',
-                top: '10%',
-                left: '10%',
-                right: '10%',
-                bottom: '10%',
-                background: 'url("data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'smallGrid\' width=\'10\' height=\'10\' patternUnits=\'userSpaceOnUse\'%3E%3Cpath d=\'M 10 0 L 0 0 0 10\' fill=\'none\' stroke=\'rgba(255, 255, 255, 0.1)\' stroke-width=\'0.5\'/%3E%3C/pattern%3E%3Cpattern id=\'grid\' width=\'50\' height=\'50\' patternUnits=\'userSpaceOnUse\'%3E%3Crect width=\'50\' height=\'50\' fill=\'url(%23smallGrid)\'/%3E%3Cpath d=\'M 50 0 L 0 0 0 50\' fill=\'none\' stroke=\'rgba(255, 255, 255, 0.15)\' stroke-width=\'1\'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'url(%23grid)\' /%3E%3C/svg%3E")',
-                opacity: 0.4
-              }}></div>
-              <div style={{
-                position: 'relative',
-                zIndex: 3,
-                fontSize: '3rem',
-                color: 'white',
-                opacity: 0.9
-              }}>
-                <FaRobot style={{ 
-                  fontSize: window.innerWidth <= 480 ? '80px' : '120px', 
-                  filter: 'drop-shadow(0 10px 10px rgba(0,0,0,0.2))' 
-                }} />
+            }}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            >
+              {/* Video Player */}
+              <div className="video-player-container" ref={containerRef}>
+                <ReactPlayer
+                  ref={playerRef}
+                  url="/YouCut_20250612_134412759.mp4"
+                  width="100%"
+                  height="100%"
+                  playing={isPlaying}
+                  loop={false}
+                  controls={false}
+                  muted={isMuted}
+                  onProgress={handleProgress}
+                  onDuration={handleDuration}
+                  onEnded={() => setIsPlaying(false)}
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    objectFit: 'cover'
+                  }}
+                />
+                
+                {/* Video Overlay */}
+                <div 
+                  className="video-overlay"
+                  style={{
+                    background: isPlaying ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0.4)',
+                  }}
+                  onClick={() => setIsPlaying(!isPlaying)}
+                >
+                  {/* Play Button */}
+                  <div 
+                    className="play-button"
+                    style={{
+                      transform: isHovering ? 'scale(1.05)' : 'scale(1)',
+                      opacity: isPlaying && !isHovering ? 0 : 1
+                    }}
+                  >
+                    {isPlaying ? 
+                      <FaPause style={{ fontSize: window.innerWidth <= 480 ? '20px' : '30px', color: 'white' }} /> : 
+                      <FaPlay style={{ fontSize: window.innerWidth <= 480 ? '20px' : '30px', color: 'white', marginLeft: '5px' }} />
+                    }
+                  </div>
+                  
+                  {/* Video Controls */}
+                  {isHovering && (
+                    <div className="video-controls">
+                      {/* Skip Backward */}
+                      <button 
+                        className="control-button skip-button"
+                        onClick={handleSkipBackward}
+                      >
+                        <FaStepBackward style={{ marginRight: '5px' }} />
+                        <span className="skip-text">10s</span>
+                      </button>
+                      
+                      {/* Progress Bar */}
+                      <div 
+                        className="progress-container"
+                        ref={progressBarRef}
+                        onMouseDown={handleSeekMouseDown}
+                        onMouseMove={handleSeekChange}
+                        onMouseUp={handleSeekMouseUp}
+                        onClick={handleSeekChange}
+                      >
+                        <div className="progress-bar">
+                          <div 
+                            className="progress-filled"
+                            style={{ width: `${progress * 100}%` }}
+                          ></div>
+                        </div>
+                        <div className="time-display">
+                          <span>{formatTime(currentTime)}</span>
+                          <span>{formatTime(duration)}</span>
+                        </div>
+                      </div>
+                      
+                      {/* Skip Forward */}
+                      <button 
+                        className="control-button skip-button"
+                        onClick={handleSkipForward}
+                      >
+                        <span className="skip-text">10s</span>
+                        <FaStepForward style={{ marginLeft: '5px' }} />
+                      </button>
+                    </div>
+                  )}
+                  
+                  {/* Fullscreen Button */}
+                  {isHovering && (
+                    <div 
+                      className="fullscreen-button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleFullscreen();
+                      }}
+                    >
+                      <FaExpand style={{ color: 'white' }} />
+                    </div>
+                  )}
+                  
+                  {/* Volume Control */}
+                  {isHovering && (
+                    <div 
+                      className="volume-control"
+                      onClick={toggleMute}
+                      style={{
+                        bottom: '15px',
+                        right: '15px',
+                        left: 'auto'
+                      }}
+                    >
+                      {isMuted ? 
+                        <FaVolumeMute style={{ color: 'white' }} /> : 
+                        <FaVolumeUp style={{ color: 'white' }} />
+                      }
+                    </div>
+                  )}
+                  
+                </div>
               </div>
             </div>
           </div>
@@ -685,26 +876,74 @@ const ProductsSection = () => {
               zIndex: 2,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              padding: '40px 20px',
+              textAlign: 'center'
             }}>
               {/* Decorative elements inside image area */}
               <div style={{
                 position: 'absolute',
-                top: '10%',
-                left: '10%',
-                right: '10%',
-                bottom: '10%',
-                background: 'url("data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'smallGrid\' width=\'15\' height=\'15\' patternUnits=\'userSpaceOnUse\'%3E%3Ccircle cx=\'7.5\' cy=\'7.5\' r=\'1\' fill=\'rgba(255, 255, 255, 0.3)\'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'url(%23smallGrid)\' /%3E%3C/svg%3E")',
-                opacity: 0.6
+                top: '0',
+                left: '0',
+                right: '0',
+                bottom: '0',
+                background: 'url("data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cdefs%3E%3Cpattern id=\'smallGrid\' width=\'10\' height=\'10\' patternUnits=\'userSpaceOnUse\'%3E%3Cpath d=\'M 10 0 L 0 0 0 10\' fill=\'none\' stroke=\'rgba(255, 255, 255, 0.1)\' stroke-width=\'0.5\'/%3E%3C/pattern%3E%3Cpattern id=\'grid\' width=\'50\' height=\'50\' patternUnits=\'userSpaceOnUse\'%3E%3Crect width=\'50\' height=\'50\' fill=\'url(%23smallGrid)\'/%3E%3Cpath d=\'M 50 0 L 0 0 0 50\' fill=\'none\' stroke=\'rgba(255, 255, 255, 0.15)\' stroke-width=\'1\'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'url(%23grid)\' /%3E%3C/svg%3E")',
+                opacity: 0.4
               }}></div>
+              
               <div style={{
                 position: 'relative',
                 zIndex: 3,
-                fontSize: '3rem',
-                color: 'white',
-                opacity: 0.9
+                width: '90%',
+                maxWidth: '450px'
               }}>
-                <FaFileAlt style={{ fontSize: '120px', filter: 'drop-shadow(0 10px 10px rgba(0,0,0,0.2))' }} />
+                <div style={{ marginBottom: '30px' }}>
+                  <FaQuoteLeft style={{ fontSize: '60px', color: 'rgba(255, 255, 255, 0.2)' }} />
+                </div>
+                
+                <p style={{ 
+                  fontSize: '1.5rem', 
+                  color: 'white', 
+                  fontWeight: '300',
+                  lineHeight: '1.8',
+                  fontStyle: 'italic',
+                  marginBottom: '40px'
+                }}>
+                  Neuralkart's AI solution has transformed our claims processing, enabling us to serve our customers faster while significantly reducing operational costs.
+                </p>
+                
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    borderRadius: '50%',
+                    backgroundColor: 'white',
+                    marginRight: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)'
+                  }}>
+                    <FaUserTie style={{ fontSize: '30px', color: '#28328c' }} />
+                  </div>
+                  <div style={{ textAlign: 'left' }}>
+                    <h5 style={{ 
+                      color: 'white', 
+                      margin: '0 0 5px 0',
+                      fontSize: '1.1rem',
+                      fontWeight: '600'
+                    }}>Rajesh Kumar</h5>
+                    <p style={{ 
+                      color: 'rgba(255, 255, 255, 0.8)', 
+                      margin: 0,
+                      fontSize: '0.95rem'
+                    }}>CTO, Cholamandalam MS</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
