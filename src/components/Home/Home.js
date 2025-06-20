@@ -112,7 +112,7 @@ const ChallengeSection = () => {
 const ProductsSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -522,7 +522,7 @@ const ProductsSection = () => {
               <div className="video-player-container" ref={containerRef}>
                 <ReactPlayer
                   ref={playerRef}
-                  url="/YouCut_20250612_134412759.mp4"
+                  url="https://ik.imagekit.io/hbdqczhz2/YouCut_20250612_134412759.mp4?tr=orig"
                   width="100%"
                   height="100%"
                   playing={isPlaying}
