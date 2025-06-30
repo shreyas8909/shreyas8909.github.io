@@ -79,8 +79,8 @@ const HomeFooter = () => {
             <a href="#challenges" onClick={(e) => { e.preventDefault(); scrollToSection('challenges'); }}>The Challenge</a>
             <a href="#products" onClick={(e) => { e.preventDefault(); scrollToSection('products'); }}>Our Products</a>
             <a href="#innovation" onClick={(e) => { e.preventDefault(); scrollToSection('innovation'); }}>Innovation</a>
-            <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Our Services</a>
-            <a href="#success" onClick={(e) => { e.preventDefault(); scrollToSection('success'); }}>Client Success</a>
+            {/* <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Our Services</a> */}
+            {/* <a href="#success" onClick={(e) => { e.preventDefault(); scrollToSection('success'); }}>Client Success</a> */}
             <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About Us</a>
             <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
           </div>
@@ -90,9 +90,9 @@ const HomeFooter = () => {
       <div className="footer-bottom">
         <p>&copy; {currentYear} Neuralkart. All rights reserved.</p>
         <div className="footer-legal-links">
-          <a href="/privacy-policy">Privacy Policy</a>
-          <span className="separator">|</span>
-          <a href="/terms-of-service">Terms of Service</a>
+          {/* <a href="/privacy-policy">Privacy Policy</a> */}
+          {/* <span className="separator">|</span> */}
+          {/* <a href="/terms-of-service">Terms of Service</a> */}
         </div>
       </div>
     </footer>

@@ -158,11 +158,11 @@ const HomeNavbar = () => {
               onClick={handleNavClick('services')} 
               label="Services" 
             /> */}
-            <NavLink 
+            {/* <NavLink 
               href="#case-studies" 
               onClick={handleNavClick('case-studies')} 
               label="Success Stories" 
-            />
+            /> */}
             <NavLink 
               href="#about" 
               onClick={handleNavClick('about')} 
